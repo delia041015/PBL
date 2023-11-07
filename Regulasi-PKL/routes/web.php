@@ -19,3 +19,6 @@ Route::get('/', function () {
 
 use App\Http\Controllers\MahasiswaController;
 Route::get('tampil-mahasiswa', [MahasiswaController::class, 'index']);
+Route::get('tambah-mahasiswa', [MahasiswaController::class, 'create'])->name('mahasiswa.create');
+Route::post('tampil-mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa.store');
+Route::get('/mahasiswa/edit/{nim}', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
