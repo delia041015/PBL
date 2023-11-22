@@ -34,7 +34,7 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('logout-admin', [AuthController::class, 'destroyAdmin'])->name('logout-admin');
 
-     });
+    });
 
     Route::middleware(['dosen'])->group(function () {
         Route::get('dashboard_dosen', function () {
@@ -42,7 +42,7 @@ Route::middleware(['auth'])->group(function () {
         })->name('dashboard_dosen');
 
         Route::get('logout-dosen', [AuthController::class, 'destroyDosen'])->name('logout-dosen');
-     });
+    });
 
     Route::middleware(['mahasiswa'])->group(function () {
         Route::get('dashboard_mahasiswa', function () {

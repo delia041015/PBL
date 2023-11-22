@@ -108,12 +108,6 @@
                   <ul class="collapse " id="dashboard" data-parent="#sidebar-menu">
                     <div class="sub-menu">
                       <li class="">
-                        <a class="sidenav-item-link" href="index.html">
-                          <span class="nav-text">Ecommerce</span>
-                        </a>
-                      </li>
-
-                      <li class="">
                         <a class="sidenav-item-link" href="analytics.html">
                           <span class="nav-text">Analytics</span>
                           <span class="badge badge-success">new</span>

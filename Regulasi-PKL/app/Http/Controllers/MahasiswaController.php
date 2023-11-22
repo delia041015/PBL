@@ -23,7 +23,7 @@ class MahasiswaController extends Controller
         return redirect('/tampil-mahasiswa');
     }
     public function edit($id){
-        $data = Mahasiswa::find($nim);
+        $data = Mahasiswa::find($id);
         return view('mahasiswa.edit', compact('data'));
     }
 }
