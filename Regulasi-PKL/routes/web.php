@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MahasiswaController;
 
 
 /*
@@ -50,11 +51,16 @@ Route::middleware(['auth'])->group(function () {
         })->name('dashboard_mahasiswa');
 
         Route::get('logout-mahasiswa', [AuthController::class, 'destroyMahasiswa'])->name('logout-mahasiswa');
+
+        
     });
 
     
 });
 
+Route::get('index-mahasiswa', [MahasiswaController::class, 'index'])->name('index-mahasiswa');
+Route::get('create-mahasiswa', [MahasiswaController::class, 'create'])->name('create-mahasiswa');
+Route::post('store-mahasiswa', [MahasiswaController::class, 'store'])->name('store-mahasiswa');
 
 
 

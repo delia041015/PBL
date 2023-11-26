@@ -16,11 +16,15 @@ class MahasiswaController extends Controller
     }
     public function store(Request $request){
         $data = new Mahasiswa();
+        $data->id_mhs = $request->id_mahasiswa;
+        $data->id_user = $request->id_user;
         $data->nim = $request->nim;
         $data->nama = $request->nama;
         $data->kelas = $request->kelas;
+        $data->tempat_pkl = $request->tempat_pkl;
+        $data->id_dosen = $request->id_dosen;
         $data->save();
-        return redirect('/tampil-mahasiswa');
+        return redirect('/index-mahasiswa');
     }
     public function edit($id){
         $data = Mahasiswa::find($id);
