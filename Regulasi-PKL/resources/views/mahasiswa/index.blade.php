@@ -27,7 +27,7 @@
             @foreach ($dataMahasiswa as $data) 
             <tr>
                 <td> {{ $loop->iteration }}</td>
-                <td> {{ $data->id_mahasiswa }}</td>
+                <td> {{ $data->id_mhs }}</td>
                 <td> {{ $data->id_user }}</td>
                 <td> {{ $data->nim }}</td>
                 <td> {{ $data->nama }}</td>
@@ -35,8 +35,8 @@
                 <td> {{ $data->tempat_pkl }}</td> 
                 <td> {{ $data->id_dosen }}</td> 
                 <td> 
-                    <form action="" method="post">@csrf
-                        <a href="" class="btn btn-warning">Edit</a>
+                    <form action="{{ route('delete-mahasiswa', $data->id_mhs) }}" method="post">@csrf
+                        <a href="{{ route('edit-mahasiswa', $data->id_mhs) }}" class="btn btn-warning">Edit</a>
                         <button class = "btn btn-danger">Delete</button>
                     </form>
 

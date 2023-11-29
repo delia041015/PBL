@@ -13,12 +13,12 @@
             <form action="{{ route('store-mahasiswa') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="nim">Id_Mahasiswa <span class="text-danger">*</span></label>
+                    <label for="id_mahasiswa">Id_Mahasiswa <span class="text-danger">*</span></label>
                     <input class="form-control" type="text" name="id_mahasiswa" id="id_mahasiswa">
                 </div>
 
                 <div class="form-group">
-                    <label for="nim">Id_User <span class="text-danger">*</span></label>
+                    <label for="id_user">Id_User <span class="text-danger">*</span></label>
                     <input class="form-control" type="text" name="id_user" id="id_user">
                 </div>
 
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="form-group"> <!-- Perbaiki bagian ini -->
-                    <label for="kelas">Tempat PKL <span class="text-danger">*</span></label>
+                    <label for="tempat_pkl">Tempat PKL <span class="text-danger">*</span></label>
                     <input class="form-control" type="text" name="tempat_pkl" id="tempat_pkl">
                 </div>
 

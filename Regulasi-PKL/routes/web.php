@@ -61,6 +61,9 @@ Route::middleware(['auth'])->group(function () {
 Route::get('index-mahasiswa', [MahasiswaController::class, 'index'])->name('index-mahasiswa');
 Route::get('create-mahasiswa', [MahasiswaController::class, 'create'])->name('create-mahasiswa');
 Route::post('store-mahasiswa', [MahasiswaController::class, 'store'])->name('store-mahasiswa');
+Route::get('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'edit'])->name('edit-mahasiswa');
+Route::post('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'update'])->name('update-mahasiswa');
+Route::post('/mahasiswa/delete/{id_mhs}', [MahasiswaController::class,'destroy'])->name('delete-mahasiswa');
 
 
 
