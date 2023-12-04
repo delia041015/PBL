@@ -65,7 +65,7 @@
 			</div>
 		</div>
 	</div>
-
+{{ $dataUser -> links() }}
 
 </div>
 @endsection

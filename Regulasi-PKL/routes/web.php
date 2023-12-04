@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MahasiswaController;
-
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,10 +31,26 @@ Route::middleware(['auth'])->group(function () {
             return view('admin.dashboard');
         })->name('dashboard');
 
+        
+
         Route::get('data-user', [AdminController::class, 'dataUser'])->name('data-user');
 
+        Route::get('data-user', [AdminController::class, 'dataUser'])->name('data-user');
         Route::get('logout-admin', [AuthController::class, 'destroyAdmin'])->name('logout-admin');
 
+        Route::get('mahasiswa', [MahasiswaController::class, 'Mahasiswa'])->name('data-mahasiswa');
+        Route::post('dashboard', [MahasiswaController::class, 'store'])->name('dashboard');
+        
+        // Edit Profile
+        // Route::get('/edit/profile/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
+        // Route::post('/edit/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
+        // dari DEL
+        // Route::get('index-mahasiswa', [MahasiswaController::class, 'index'])->name('index-mahasiswa');
+        // Route::get('create-mahasiswa', [MahasiswaController::class, 'create'])->name('create-mahasiswa');
+        // Route::post('store-mahasiswa', [MahasiswaController::class, 'store'])->name('store-mahasiswa');
+        Route::get('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'edit'])->name('edit-mahasiswa');
+        Route::post('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'update'])->name('update-mahasiswa');
+        Route::post('/mahasiswa/delete/{id_mhs}', [MahasiswaController::class,'destroy'])->name('delete-mahasiswa');
     });
 
     Route::middleware(['dosen'])->group(function () {
@@ -50,20 +66,25 @@ Route::middleware(['auth'])->group(function () {
             return view('mahasiswa.dashboard');
         })->name('dashboard_mahasiswa');
 
+        Route::get('sidebar_mahasiswa', function () {
+            return view('layouts.sidebar_mahasiswa');
+        })->name('sidebar_mahasiswa');
+
         Route::get('logout-mahasiswa', [AuthController::class, 'destroyMahasiswa'])->name('logout-mahasiswa');
 
-        
+        Route::get('/edit/profile/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::post('/edit/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
     });
 
     
 });
 
-Route::get('index-mahasiswa', [MahasiswaController::class, 'index'])->name('index-mahasiswa');
-Route::get('create-mahasiswa', [MahasiswaController::class, 'create'])->name('create-mahasiswa');
-Route::post('store-mahasiswa', [MahasiswaController::class, 'store'])->name('store-mahasiswa');
-Route::get('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'edit'])->name('edit-mahasiswa');
-Route::post('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'update'])->name('update-mahasiswa');
-Route::post('/mahasiswa/delete/{id_mhs}', [MahasiswaController::class,'destroy'])->name('delete-mahasiswa');
+// Route::get('index-mahasiswa', [MahasiswaController::class, 'index'])->name('index-mahasiswa');
+// Route::get('create-mahasiswa', [MahasiswaController::class, 'create'])->name('create-mahasiswa');
+// Route::post('store-mahasiswa', [MahasiswaController::class, 'store'])->name('store-mahasiswa');
+// Route::get('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'edit'])->name('edit-mahasiswa');
+// Route::post('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'update'])->name('update-mahasiswa');
+// Route::post('/mahasiswa/delete/{id_mhs}', [MahasiswaController::class,'destroy'])->name('delete-mahasiswa');
 
 
 

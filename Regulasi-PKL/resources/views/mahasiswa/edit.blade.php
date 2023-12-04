@@ -11,11 +11,12 @@
         <div class="col-md-6">
             <h4>Edit Data Mahasiswa</h4>
             <br>
-            <form action="{{ route('store-mahasiswa') }}" method="POST">
+            {{-- <form action="{{ route('update-mahasiswa') }}" method="POST"> --}}
+            <form action="{{ route('update-mahasiswa', ['id_mhs' => $data->id_mhs]) }}" method="POST">
                 @csrf
                 <div class="form-group">
-                <label for="id_mahasiswa">Id_Mahasiswa <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="id_mahasiswa" id="id_mahasiswa"
+                <label for="id_mhs">Id_Mahasiswa <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" name="id_mhs" id="id_mhs disabled"
                     value="{{$data->id_mhs}}">
                 </div>
                 <div class="form-group">
@@ -48,11 +49,10 @@
                     <input class="form-control" type="text" name="id_dosen" id="id_dosen"
                     value="{{$data->id_dosen}}">
                 </div>
-               
                 <br>
                 <div>
                     <button type="submit" class="btn btn-primary">Ubah</button>
-                    <a href="" class="btn btn-success">Kembali</a>
+                    <a href="/mahasiswa" class="btn btn-success">Kembali</a>
                 </div>
             </form>
         </div>

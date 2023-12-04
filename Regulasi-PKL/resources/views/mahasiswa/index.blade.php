@@ -1,3 +1,7 @@
+{{-- @extends('layouts.sidebar')
+
+@section('content') --}}
+
 <head>
         <title>REGULASI PKL</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -12,23 +16,23 @@
     <table class="table table-bordered table striped" id="tabel-mahasiswa">
         <thead>
             <tr>
-                <th style="width:1%">No.</th>
-                <th style="width:5%">Id Mahasiswa</th>
-                <th style="width:5%">Id User</th>
-                <th style="width:5%">NIM</th>
-                <th style="width:5%">Nama Mahasiswa</th>
-                <th style="width:5%">Kelas</th>
-                <th style="width:5%">Tempat PKL</th>
-                <th style="width:5%">Id Dosen</th>
-                <th style="width:5%">Aksi</th>
+                <th >No.</th>
+                {{-- <th style="width:5%">Id Mahasiswa</th> --}}
+                {{-- <th style="width:5%">Id User</th> --}}
+                <th>NIM</th>
+                <th>Nama Mahasiswa</th>
+                <th>Kelas</th>
+                <th>Tempat PKL</th>
+                <th>Id Dosen</th>
+                <th>Aksi</th>
             </tr> 
         </thead>
         <tbody>
             @foreach ($dataMahasiswa as $data) 
             <tr>
                 <td> {{ $loop->iteration }}</td>
-                <td> {{ $data->id_mhs }}</td>
-                <td> {{ $data->id_user }}</td>
+                {{-- <td> {{ $data->id_mhs }}</td> --}}
+                {{-- <td> {{ $data->id_user }}</td> --}}
                 <td> {{ $data->nim }}</td>
                 <td> {{ $data->nama }}</td>
                 <td> {{ $data->kelas }}</td> 
@@ -46,3 +50,5 @@
         </tbody>
     </table>
 </div>
+
+{{-- @endsection --}}
