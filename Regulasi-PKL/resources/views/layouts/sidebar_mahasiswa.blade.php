@@ -74,7 +74,7 @@
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand">
-              <a href="/index.html" title="Sleek Dashboard">
+              <a href="/sidebar_mahasiswa" title="Sleek Dashboard">
                 <svg
                   class="brand-icon"
                   xmlns="http://www.w3.org/2000/svg"

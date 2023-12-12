@@ -133,7 +133,13 @@
                       </li>
 
                       <li class="">
-                        <a class="sidenav-item-link" href="contacts.html">
+                        <a class="sidenav-item-link" href="{{ route('index-dosen') }}">
+                          <span class="nav-text">Dosen</span>
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a class="sidenav-item-link" href="{{ route('index-instansi') }}">
                           <span class="nav-text">Instansi</span>
                         </a>
                       </li>

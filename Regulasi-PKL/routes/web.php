@@ -5,6 +5,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DosenController;
+use App\Http\Controllers\InstansiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +53,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'edit'])->name('edit-mahasiswa');
         Route::post('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'update'])->name('update-mahasiswa');
         Route::post('/mahasiswa/delete/{id_mhs}', [MahasiswaController::class,'destroy'])->name('delete-mahasiswa');
+    
+        Route::get('index-dosen', [DosenController::class, 'index'])->name('index-dosen');
+        Route::get('create-dosen', [DosenController::class, 'create'])->name('create-dosen');
+        Route::post('store-dosen', [DosenController::class, 'store'])->name('store-dosen');
+        Route::get('/dosen/edit/{id_dosen}', [DosenController::class,'edit'])->name('edit-dosen');
+        Route::post('/dosen/edit/{id_dosen}', [DosenController::class,'update'])->name('update-dosen');
+        Route::post('/dosen/delete/{id_dosen}', [DosenController::class,'destroy'])->name('delete-dosen');
     });
 
     Route::middleware(['dosen'])->group(function () {
@@ -86,8 +95,21 @@ Route::middleware(['auth'])->group(function () {
 // Route::post('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'update'])->name('update-mahasiswa');
 // Route::post('/mahasiswa/delete/{id_mhs}', [MahasiswaController::class,'destroy'])->name('delete-mahasiswa');
 
+//Dosen
+Route::get('index-dosen', [DosenController::class, 'index'])->name('index-dosen');
+Route::get('create-dosen', [DosenController::class, 'create'])->name('create-dosen');
+Route::post('store-dosen', [DosenController::class, 'store'])->name('store-dosen');
+Route::get('/dosen/edit/{id_dosen}', [DosenController::class,'edit'])->name('edit-dosen');
+Route::post('/dosen/edit/{id_dosen}', [DosenController::class,'update'])->name('update-dosen');
+Route::post('/dosen/delete/{id_dosen}', [DosenController::class,'destroy'])->name('delete-dosen');
 
-
+//Instansi
+Route::get('index-instansi', [InstansiController::class, 'index'])->name('index-instansi');
+Route::get('create-instansi', [InstansiController::class, 'create'])->name('create-instansi');
+Route::post('store-instansi', [InstansiController::class, 'store'])->name('store-instansi');
+Route::get('/instansi/edit/{id_instansi}', [InstansiController::class,'edit'])->name('edit-instansi');
+Route::post('/instansi/edit/{id_instansi}', [InstansiController::class,'update'])->name('update-instansi');
+Route::post('/instansi/delete/{id_instansi}', [InstansiController::class,'destroy'])->name('delete-instansi');
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('signUp', [AuthController::class, 'signUp'])-> name('signUp');
