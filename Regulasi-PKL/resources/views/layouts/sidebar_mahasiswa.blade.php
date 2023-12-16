@@ -111,6 +111,12 @@
                         </a>
                       </li>
 
+                      <li class="">
+                        <a class="sidenav-item-link" href="/kelompok-mhs">
+                          <span class="nav-text">Kelompok</span>
+                        </a>
+                      </li>
+
                       {{-- <li class="">
                         <a class="sidenav-item-link" href="analytics.html">
                           <span class="nav-text">Analytics</span>
