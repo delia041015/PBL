@@ -57,7 +57,7 @@ class DosenController extends Controller
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
         $data->save();
-        return redirect('/dosen');
+        return redirect('/dosen')->with('success','Data berhasil disimpan!');
     }
     public function edit($id_dosen){
         $data = Dosen::find($id_dosen);
@@ -72,11 +72,11 @@ class DosenController extends Controller
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
         $data->update();
-        return redirect('/dosen');
+        return redirect('/dosen')->with('success','Data berhasil diubah!');
     }
     public function destroy($id_dosen){
         $data = Dosen::find($id_dosen);
         $data->delete();
-        return redirect('/dosen');
+        return redirect('/dosen')->with('success','Data berhasil dihapus!');
     }
 }
