@@ -7,6 +7,7 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\InstansiController;
+use App\Models\Instansi;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,26 +41,33 @@ Route::middleware(['auth'])->group(function () {
         Route::get('data-user', [AdminController::class, 'dataUser'])->name('data-user');
         Route::get('logout-admin', [AuthController::class, 'destroyAdmin'])->name('logout-admin');
 
+        // Mahasiswa
         Route::get('mahasiswa', [MahasiswaController::class, 'Mahasiswa'])->name('data-mahasiswa');
-        Route::post('dashboard', [MahasiswaController::class, 'store'])->name('dashboard');
-        
-        // Edit Profile
-        // Route::get('/edit/profile/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
-        // Route::post('/edit/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
-        // dari DEL
-        // Route::get('index-mahasiswa', [MahasiswaController::class, 'index'])->name('index-mahasiswa');
-        // Route::get('create-mahasiswa', [MahasiswaController::class, 'create'])->name('create-mahasiswa');
-        // Route::post('store-mahasiswa', [MahasiswaController::class, 'store'])->name('store-mahasiswa');
+        Route::post('mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa');
         Route::get('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'edit'])->name('edit-mahasiswa');
         Route::post('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'update'])->name('update-mahasiswa');
         Route::post('/mahasiswa/delete/{id_mhs}', [MahasiswaController::class,'destroy'])->name('delete-mahasiswa');
     
-        Route::get('index-dosen', [DosenController::class, 'index'])->name('index-dosen');
-        Route::get('create-dosen', [DosenController::class, 'create'])->name('create-dosen');
-        Route::post('store-dosen', [DosenController::class, 'store'])->name('store-dosen');
+        // Dosen
+        // Route::get('index-dosen', [DosenController::class, 'index'])->name('index-dosen');
+        // Route::get('create-dosen', [DosenController::class, 'create'])->name('create-dosen');
+        Route::get('dosen', [DosenController::class, 'Dosen'])->name('data-dosen');
+        Route::post('dosen', [DosenController::class, 'store'])->name('dosen');
+        // Route::post('store-dosen', [DosenController::class, 'store'])->name('store-dosen');
         Route::get('/dosen/edit/{id_dosen}', [DosenController::class,'edit'])->name('edit-dosen');
         Route::post('/dosen/edit/{id_dosen}', [DosenController::class,'update'])->name('update-dosen');
         Route::post('/dosen/delete/{id_dosen}', [DosenController::class,'destroy'])->name('delete-dosen');
+    
+
+        // Instansi
+        Route::get('instansi', [InstansiController::class, 'Instansi'])->name('data-instansi');
+        Route::post('instansi', [InstansiController::class, 'store'])->name('instansi');
+        // Route::get('index-instansi', [InstansiController::class, 'index'])->name('index-instansi');
+        // Route::get('create-instansi', [InstansiController::class, 'create'])->name('create-instansi');
+        // Route::post('store-instansi', [InstansiController::class, 'store'])->name('store-instansi');
+        Route::get('/instansi/edit/{id_instansi}', [InstansiController::class,'edit'])->name('edit-instansi');
+        Route::post('/instansi/edit/{id_instansi}', [InstansiController::class,'update'])->name('update-instansi');
+        Route::post('/instansi/delete/{id_instansi}', [InstansiController::class,'destroy'])->name('delete-instansi');
     });
 
     Route::middleware(['dosen'])->group(function () {

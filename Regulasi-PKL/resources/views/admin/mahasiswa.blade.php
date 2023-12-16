@@ -96,7 +96,7 @@
 			</div>
 
 			<div class="modal-body">
-				<form action="/dashboard" method="POST">
+				<form action="/mahasiswa" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="id_mhs">Id_Mahasiswa <span class="text-danger">*</span></label>

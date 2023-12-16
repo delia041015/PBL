@@ -31,7 +31,7 @@
             <br>
             <div>
                 <button type="submit" class="btn btn-primary">Ubah</button>
-                <a href="{{url('index-instansi')}}" class="btn btn-success">Kembali</a>
+                <a href="{{url('instansi')}}" class="btn btn-success">Kembali</a>
             </div>
         </form>
     </div>

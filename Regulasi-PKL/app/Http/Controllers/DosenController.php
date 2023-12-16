@@ -7,13 +7,17 @@ use App\Models\Dosen;
 
 class DosenController extends Controller
 {
-    public function index(){
-        $data = Dosen::all();
-            return view('dosen.index', ['dataDosen'=> $data]);
+    // public function index(){
+    //     $data = Dosen::all();
+    //         return view('dosen.index', ['dataDosen'=> $data]);
+    // }
+    public function Dosen(){
+        $data = Dosen::paginate(5);
+        return view('admin.dosen',['dataDosen'=> $data]);
     }
-    public function create(){
-        return view('dosen.create');
-    }
+    // public function create(){
+    //     return view('dosen.create');
+    // }
     public function store(Request $request){
         $data = new Dosen();
         $data->id_dosen = $request->id_dosen;
@@ -23,7 +27,7 @@ class DosenController extends Controller
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
         $data->save();
-        return redirect('/index-dosen');
+        return redirect('/dosen');
     }
     public function edit($id_dosen){
         $data = Dosen::find($id_dosen);
@@ -38,11 +42,11 @@ class DosenController extends Controller
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
         $data->update();
-        return redirect('/index-dosen');
+        return redirect('/dosen');
     }
     public function destroy($id_dosen){
         $data = Dosen::find($id_dosen);
         $data->delete();
-        return redirect('/index-dosen');
+        return redirect('/dosen');
     }
 }
