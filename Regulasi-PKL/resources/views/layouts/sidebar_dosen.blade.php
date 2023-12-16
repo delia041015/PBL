@@ -104,22 +104,28 @@
                   <ul class="collapse " id="dashboard" data-parent="#sidebar-menu">
                     <div class="sub-menu">
                       <li class="">
-                        <a class="sidenav-item-link" href="index.html">
-                          <span class="nav-text">Ecommerce</span>
+                        <a class="sidenav-item-link" href="/dosen-dosen">
+                          <span class="nav-text">Dosen</span>
                         </a>
                       </li>
 
                       <li class="">
-                        <a class="sidenav-item-link" href="analytics.html">
-                          <span class="nav-text">Analytics</span>
-                          <span class="badge badge-success">new</span>
+                        <a class="sidenav-item-link" href="/mahasiswa-dosen">
+                          <span class="nav-text">Mahasiswa</span>
+                          {{-- <span class="badge badge-success">new</span> --}}
+                        </a>
+                      </li>
+
+                      <li class="">
+                        <a class="sidenav-item-link" href="/instansi-dosen">
+                          <span class="nav-text">Instansi</span>
                         </a>
                       </li>
                     </div>
                   </ul>
                 </li>
 
-                <li class="has-sub ">
+                {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#app"
                     aria-expanded="false" aria-controls="app">
                     <i class="mdi mdi-pencil-box-multiple"></i>
@@ -153,12 +159,12 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
                 <!-- <li class="section-title">
                   UI Elements
                 </li> -->
-
+{{-- 
                 <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#components"
                     aria-expanded="false" aria-controls="components">
@@ -285,9 +291,9 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
-                <li class="has-sub ">
+                {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons"
                     aria-expanded="false" aria-controls="icons">
                     <i class="mdi mdi-diamond-stone"></i>
@@ -309,9 +315,9 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
-                <li class="has-sub ">
+                {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#forms"
                     aria-expanded="false" aria-controls="forms">
                     <i class="mdi mdi-email-mark-as-unread"></i>
@@ -351,9 +357,9 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
-                <li class="has-sub ">
+                {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables"
                     aria-expanded="false" aria-controls="tables">
                     <i class="mdi mdi-table"></i>
@@ -396,9 +402,9 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
-                <li class="has-sub ">
+                {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#maps"
                     aria-expanded="false" aria-controls="maps">
                     <i class="mdi mdi-google-maps"></i>
@@ -420,9 +426,9 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
-                <li class="has-sub ">
+                {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#widgets"
                     aria-expanded="false" aria-controls="widgets">
                     <i class="mdi mdi-widgets"></i>
@@ -444,8 +450,8 @@
                       </li>
                     </div>
                   </ul>
-                </li>
-
+                </li> --}}
+{{-- 
                 <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"
                     aria-expanded="false" aria-controls="charts">
@@ -462,13 +468,13 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
                 <!-- <li class="section-title">
                   Pages
                 </li> -->
 
-                <li class="has-sub ">
+                {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#pages"
                     aria-expanded="false" aria-controls="pages">
                     <i class="mdi mdi-image-filter-none"></i>
@@ -522,9 +528,9 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
-                <li class="has-sub active expand">
+                {{-- <li class="has-sub active expand">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#documentation"
                     aria-expanded="false" aria-controls="documentation">
                     <i class="mdi mdi-book-open-page-variant"></i>
@@ -638,7 +644,7 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
                 <!-- <li class="section-title">
                   Documentation
@@ -698,7 +704,7 @@
 
               <div class="navbar-right ">
                 <ul class="nav navbar-nav">
-                  <li class="dropdown notifications-menu custom-dropdown">
+                  {{-- <li class="dropdown notifications-menu custom-dropdown">
                     <button class="dropdown-toggle notify-toggler custom-dropdown-toggler">
                       <i class="mdi mdi-bell-outline"></i>
                     </button>
@@ -1135,7 +1141,7 @@
                         <a class="text-center" href="#"> View All </a>
                       </li>
                     </ul>
-                  </li>
+                  </li> --}}
                   <li class="right-sidebar-in right-sidebar-2-menu">
                     <i class="mdi mdi-settings mdi-spin"></i>
                   </li>
@@ -1143,14 +1149,14 @@
                   <li class="dropdown user-menu">
                     <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                       <img src="assets/img/user/user.png" class="user-image" alt="User Image" />
-                      <span class="d-none d-lg-inline-block">Abdus Salam</span>
+                      <span class="d-none d-lg-inline-block">{{Auth::user()->name}}</span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <!-- User image -->
                       <li class="dropdown-header">
                         <img src="assets/img/user/user.png" class="img-circle" alt="User Image" />
                         <div class="d-inline-block">
-                          Abdus Salam <small class="pt-1">iamabdus@gmail.com</small>
+                          {{Auth::user()->name}} <small class="pt-1">{{Auth::user()->email}}</small>
                         </div>
                       </li>
 
@@ -1159,7 +1165,7 @@
                           <i class="mdi mdi-account"></i> My Profile
                         </a>
                       </li>
-                      <li>
+                      {{-- <li>
                         <a href="#">
                           <i class="mdi mdi-email"></i> Message
                         </a>
@@ -1169,7 +1175,7 @@
                       </li>
                       <li class="right-sidebar-in">
                         <a href="javascript:0"> <i class="mdi mdi-settings"></i> Setting </a>
-                      </li>
+                      </li> --}}
 
                       <li class="dropdown-footer">
                         <a href="{{route('logout-dosen')}}"> <i class="mdi mdi-logout"></i> Log Out </a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
+use App\Models\Instansi;
 
 class MahasiswaController extends Controller
 {
@@ -16,7 +17,10 @@ class MahasiswaController extends Controller
         $data = Mahasiswa::paginate(5);
         return view('admin.mahasiswa',['datamhs'=> $data]);
     }
-
+    public function Instansi(){
+        $data = Instansi::paginate(5);
+        return view('mahasiswa.instansi',['dataInstansi'=> $data]);
+    }
     // public function create(){
     //     return view('mahasiswa.create');
     // }

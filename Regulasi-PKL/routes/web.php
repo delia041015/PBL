@@ -76,6 +76,12 @@ Route::middleware(['auth'])->group(function () {
         })->name('dashboard_dosen');
 
         Route::get('logout-dosen', [AuthController::class, 'destroyDosen'])->name('logout-dosen');
+
+        Route::get('/dosen-dosen', [DosenController::class, 'Dosen2'])->name('data-dosen');
+
+        Route::get('/mahasiswa-dosen', [DosenController::class, 'Mahasiswa'])->name('data-mahasiswa');
+
+        Route::get('/instansi-dosen', [DosenController::class, 'Instansi'])->name('data-instansi');
     });
 
     Route::middleware(['mahasiswa'])->group(function () {
@@ -88,6 +94,8 @@ Route::middleware(['auth'])->group(function () {
         })->name('sidebar_mahasiswa');
 
         Route::get('logout-mahasiswa', [AuthController::class, 'destroyMahasiswa'])->name('logout-mahasiswa');
+
+        Route::get('/instansi-mhs', [MahasiswaController::class, 'Instansi'])->name('data-instansi');
 
         Route::get('/edit/profile/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::post('/edit/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');

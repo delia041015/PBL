@@ -15,6 +15,7 @@ class InstansiController extends Controller
         $data = Instansi::paginate(5);
         return view('admin.instansi',['dataInstansi'=> $data]);
     }
+
     // public function create(){
     //     return view('instansi.create');
     // }

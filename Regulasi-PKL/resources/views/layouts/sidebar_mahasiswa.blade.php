@@ -106,7 +106,7 @@
                   <ul class="collapse " id="dashboard" data-parent="#sidebar-menu">
                     <div class="sub-menu">
                       <li class="">
-                        <a class="sidenav-item-link" href="index.html">
+                        <a class="sidenav-item-link" href="/instansi-mhs">
                           <span class="nav-text">Instansi</span>
                         </a>
                       </li>
@@ -121,7 +121,7 @@
                   </ul>
                 </li>
 
-                <li class="has-sub ">
+                {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#forms"
                     aria-expanded="false" aria-controls="forms">
                     <i class="mdi mdi-email-mark-as-unread"></i>
@@ -137,9 +137,9 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
-                <li class="has-sub ">
+                {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#maps"
                     aria-expanded="false" aria-controls="maps">
                     <i class="mdi mdi-google-maps"></i>
@@ -161,9 +161,9 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
-                <li class="has-sub active expand">
+                {{-- <li class="has-sub active expand">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#documentation"
                     aria-expanded="false" aria-controls="documentation">
                     <i class="mdi mdi-book-open-page-variant"></i>
@@ -277,7 +277,7 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
                 <!-- <li class="section-title">
                   Documentation
@@ -342,7 +342,7 @@
                       <i class="mdi mdi-bell-outline"></i>
                     </button> --}}
 
-                    <div class="card card-default dropdown-notify dropdown-menu-right mb-0">
+                    {{-- <div class="card card-default dropdown-notify dropdown-menu-right mb-0">
                       <div class="card-header card-header-border-bottom px-3">
                         <h2>Notifications</h2>
                       </div>
@@ -773,7 +773,7 @@
                       <li class="dropdown-footer">
                         <a class="text-center" href="#"> View All </a>
                       </li>
-                    </ul>
+                    </ul> --}}
                   </li>
                   <li class="right-sidebar-in right-sidebar-2-menu">
                     <i class="mdi mdi-settings mdi-spin"></i>
@@ -798,9 +798,9 @@
                             <i class="mdi mdi-account"></i> My Profile 
                         </a>
                       </li>
-                      <li class="right-sidebar-in">
+                      {{-- <li class="right-sidebar-in">
                         <a href="javascript:0"> <i class="mdi mdi-settings"></i> Setting </a>
-                      </li>
+                      </li> --}}
 
                       <li class="dropdown-footer">
                         <a href="{{route('logout-mahasiswa')}}"> <i class="mdi mdi-logout"></i> Log Out </a>

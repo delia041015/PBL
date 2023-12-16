@@ -108,9 +108,8 @@
                   <ul class="collapse " id="dashboard" data-parent="#sidebar-menu">
                     <div class="sub-menu">
                       <li class="">
-                        <a class="sidenav-item-link" href="analytics.html">
-                          <span class="nav-text">Analytics</span>
-                          <span class="badge badge-success">new</span>
+                        <a class="sidenav-item-link" href="{{ route('data-mahasiswa') }}">
+                          <span class="nav-text">Mahasiswa</span>
                         </a>
                       </li>
                     </div>

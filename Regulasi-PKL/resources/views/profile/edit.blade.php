@@ -78,11 +78,11 @@
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                     </div>
     
-                    {{-- <select class="custom-select my-1 mr-sm-2" id="role" name="role"  >
-                        <option value="admin" {{ $data->role == 'admin' ? 'selected' : '' }}>Admin</option>
-                        <option value="dosen" {{ $data->role == 'dosen' ? 'selected' : '' }}>Dosen</option>
+                    <select class="custom-select my-1 mr-sm-2" id="role" name="role"  >
+                        {{-- <option value="admin" {{ $data->role == 'admin' ? 'selected' : '' }}>Admin</option> --}}
+                        {{-- <option value="dosen" {{ $data->role == 'dosen' ? 'selected' : '' }}>Dosen</option> --}}
                         <option value="mahasiswa" {{ $data->role == 'mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>
-                    </select> --}}
+                    </select>
                 
             </div>
     

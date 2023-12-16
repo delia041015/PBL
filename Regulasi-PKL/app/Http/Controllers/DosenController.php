@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Dosen;
+use App\Models\Mahasiswa;
+use App\Models\Instansi;
 
 class DosenController extends Controller
 {
@@ -14,6 +16,19 @@ class DosenController extends Controller
     public function Dosen(){
         $data = Dosen::paginate(5);
         return view('admin.dosen',['dataDosen'=> $data]);
+    }
+    public function Mahasiswa(){
+        $data = Mahasiswa::paginate(5);
+        return view('dosen.mahasiswa',['datamhs'=> $data]);
+    }
+    public function Dosen2(){
+        $data = Dosen::paginate(5);
+        return view('dosen.dosen',['dataDosen'=> $data]);
+    }
+
+    public function Instansi(){
+        $data = Instansi::paginate(5);
+        return view('dosen.instansi',['dataInstansi'=> $data]);
     }
     // public function create(){
     //     return view('dosen.create');
