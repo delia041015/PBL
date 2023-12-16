@@ -10,6 +10,18 @@
         <div class="col-md-6">
             <h4>Form Input Data Mahasiswa</h4>
             <br>
+            
+            <!--Pengkondisian validasi form-->
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li> {{$error}} </li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
             <form action="{{ route('store-dosen') }}" method="POST">
                 @csrf
                 <div class="form-group">
