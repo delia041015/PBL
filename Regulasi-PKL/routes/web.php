@@ -94,9 +94,9 @@ Route::middleware(['auth'])->group(function () {
             return view('mahasiswa.dashboard');
         })->name('dashboard_mahasiswa');
 
-        Route::get('sidebar_mahasiswa', function () {
-            return view('layouts.sidebar_mahasiswa');
-        })->name('sidebar_mahasiswa');
+        // Route::get('sidebar_mahasiswa', function () {
+        //     return view('layouts.sidebar_mahasiswa');
+        // })->name('sidebar_mahasiswa');
 
         Route::get('logout-mahasiswa', [AuthController::class, 'destroyMahasiswa'])->name('logout-mahasiswa');
 
@@ -104,9 +104,6 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/kelompok-mhs', [KelompokController::class, 'Kelompok'])->name('data-kelompok');
         Route::post('/kelompok-mhs', [KelompokController::class, 'store2'])->name('kelompok');
-        // Route::get('/kelompok/edit/{id_kelompok}', [KelompokController::class,'edit'])->name('edit-kelompok');
-        // Route::post('/kelompok/edit/{id_kelompok}', [KelompokController::class,'update'])->name('update-kelompok');
-        // Route::post('/kelompok/delete/{id_kelompok}', [KelompokController::class,'destroy'])->name('delete-kelompok');
 
         Route::get('/edit/profile/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::post('/edit/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');

@@ -32,13 +32,12 @@ class MahasiswaController extends Controller
         ];
 
         $this->validate($request, [
-            'id_mhs' => 'required|unique:mahasiswa',
-            'id_user' => 'required',
+            'id_mhs' => 'required|unique:mahasiswa|numeric',
+            'id_user' => 'required|numeric',
             'nim' => 'required',
             'nama' => 'required|unique:mahasiswa',
             'kelas' => 'required',
-            'tempat_pkl' => 'required',
-            'id_dosen'=>'required'
+            'no_hp' => 'required|numeric'
         ], $message);
 
         $data = new Mahasiswa();
@@ -47,8 +46,7 @@ class MahasiswaController extends Controller
         $data->nim = $request->nim;
         $data->nama = $request->nama;
         $data->kelas = $request->kelas;
-        $data->tempat_pkl = $request->tempat_pkl;
-        $data->id_dosen = $request->id_dosen;
+        $data->no_hp = $request->no_hp;
         $data->save();
         return redirect('/mahasiswa-adm')->with('sucses','Data berhasil disimpan!');
     }
@@ -57,14 +55,27 @@ class MahasiswaController extends Controller
         return view('mahasiswa.edit', compact('data'));
     }
     public function update(Request $request, $id_mhs){
+        $message= [
+            'required' => ':attribute tidak boleh kosong',
+            'unique' => ':attribute sudah digunakan',
+            'numeric' => ':attribute harus berupa angka',
+        ];
+
+        $this->validate($request, [
+            'id_mhs' => 'required|numeric',
+            'id_user' => 'required|numeric',
+            'nim' => 'required',
+            'nama' => 'required|unique:mahasiswa',
+            'kelas' => 'required',
+            'no_hp' => 'required|numeric'
+        ], $message);
         $data = Mahasiswa::find($id_mhs);
         // $data->id_mhs = $request->id_mhs;
         $data->id_user = $request->id_user;
         $data->nim = $request->nim;
         $data->nama = $request->nama;
         $data->kelas = $request->kelas;
-        $data->tempat_pkl= $request->tempat_pkl;
-        $data->id_dosen = $request->id_dosen;
+        $data->no_hp= $request->no_hp;
         $data->update();
         return redirect('/mahasiswa-adm')->with('sucses','Data berhasil disimpan!');
     }

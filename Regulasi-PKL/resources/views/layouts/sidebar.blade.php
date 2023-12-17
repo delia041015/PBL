@@ -43,6 +43,17 @@
   </head>
 
   <body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
+    
+    <!--pengkondisian validasi frim-->
+    @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
     <script>
       NProgress.configure({ showSpinner: false });
       NProgress.start();
@@ -115,11 +126,7 @@
                           <span class="nav-text">User</span>
                         </a>
                       </li>
-                      <li class="">
-                        <a class="sidenav-item-link" href="/kelompok-adm">
-                          <span class="nav-text">Kelompok</span>
-                        </a>
-                      </li>
+
                     </div>
                   </ul>
                 </li>
@@ -152,6 +159,11 @@
                         </a>
                       </li>
                       
+                      <li class="">
+                        <a class="sidenav-item-link" href="/kelompok-adm">
+                          <span class="nav-text">Kelompok</span>
+                        </a>
+                      </li>
 
                     </div>
                   </ul>
