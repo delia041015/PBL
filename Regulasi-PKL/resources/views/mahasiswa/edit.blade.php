@@ -50,14 +50,9 @@
                     value="{{$data->kelas}}">
                 </div>
                 <div class="form-group">
-                    <label for="tempat_pkl">Tempat PKL <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="tempat_pkl" id="tempat_pkl"
-                    value="{{$data->tempat_pkl}}">
-                </div>
-                <div class="form-group">
-                    <label for="id_dosen">Id Dosen <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="id_dosen" id="id_dosen"
-                    value="{{$data->id_dosen}}">
+                    <label for="no_hp">No.HP <span class="text-danger">*</span></label>
+                    <input class="form-control" type="text" name="no_hp" id="no_hp"
+                    value="{{$data->no_hp}}">
                 </div>
                 <br>
                 <div>

@@ -32,13 +32,12 @@ class MahasiswaController extends Controller
         ];
 
         $this->validate($request, [
-            'id_mhs' => 'required|unique:mahasiswa',
-            'id_user' => 'required',
+            'id_mhs' => 'required|unique:mahasiswa|numeric',
+            'id_user' => 'required|numeric',
             'nim' => 'required',
             'nama' => 'required|unique:mahasiswa',
             'kelas' => 'required',
-            'tempat_pkl' => 'required',
-            'id_dosen'=>'required'
+            'no_hp' => 'required|numeric'
         ], $message);
 
         $data = new Mahasiswa();
@@ -47,10 +46,9 @@ class MahasiswaController extends Controller
         $data->nim = $request->nim;
         $data->nama = $request->nama;
         $data->kelas = $request->kelas;
-        $data->tempat_pkl = $request->tempat_pkl;
-        $data->id_dosen = $request->id_dosen;
+        $data->no_hp = $request->no_hp;
         $data->save();
-        return redirect('/mahasiswa')->with('sucses','Data berhasil disimpan!');
+        return redirect('/mahasiswa-adm')->with('sucses','Data berhasil disimpan!');
     }
     public function edit($id_mhs){
         $data = Mahasiswa::find($id_mhs);
@@ -64,13 +62,12 @@ class MahasiswaController extends Controller
         ];
 
         $this->validate($request, [
-            'id_mhs' => 'required|unique:mahasiswa',
-            'id_user' => 'required',
+            'id_mhs' => 'required|numeric',
+            'id_user' => 'required|numeric',
             'nim' => 'required',
             'nama' => 'required|unique:mahasiswa',
             'kelas' => 'required',
-            'tempat_pkl' => 'required',
-            'id_dosen'=>'required'
+            'no_hp' => 'required|numeric'
         ], $message);
         $data = Mahasiswa::find($id_mhs);
         // $data->id_mhs = $request->id_mhs;
@@ -78,15 +75,14 @@ class MahasiswaController extends Controller
         $data->nim = $request->nim;
         $data->nama = $request->nama;
         $data->kelas = $request->kelas;
-        $data->tempat_pkl= $request->tempat_pkl;
-        $data->id_dosen = $request->id_dosen;
+        $data->no_hp= $request->no_hp;
         $data->update();
-        return redirect('/mahasiswa')->with('sucses','Data berhasil disimpan!');
+        return redirect('/mahasiswa-adm')->with('sucses','Data berhasil disimpan!');
     }
     public function destroy($id_mhs){
         $data = Mahasiswa::find($id_mhs);
         $data->delete();
-        return redirect('/mahasiswa')->with('sucses','Data berhasil disimpan!');
+        return redirect('/mahasiswa-adm')->with('sucses','Data berhasil disimpan!');
     }
 
 }
