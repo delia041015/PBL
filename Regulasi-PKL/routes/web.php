@@ -91,9 +91,9 @@ Route::middleware(['auth'])->group(function () {
             return view('mahasiswa.dashboard');
         })->name('dashboard_mahasiswa');
 
-        Route::get('sidebar_mahasiswa', function () {
-            return view('layouts.sidebar_mahasiswa');
-        })->name('sidebar_mahasiswa');
+        // Route::get('sidebar_mahasiswa', function () {
+        //     return view('layouts.sidebar_mahasiswa');
+        // })->name('sidebar_mahasiswa');
 
         Route::get('logout-mahasiswa', [AuthController::class, 'destroyMahasiswa'])->name('logout-mahasiswa');
 
