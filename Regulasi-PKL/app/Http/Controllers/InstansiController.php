@@ -37,7 +37,7 @@ class InstansiController extends Controller
         $data->nama = $request->nama;
         $data->alamat = $request->alamat;
         $data->save();
-        return redirect('/index-instansi')-> with('success','Data Berhasil Ditambahkan');
+        return redirect('/instansi-adm')-> with('success','Data Berhasil Ditambahkan');
     }
     public function edit($id_instansi){
         $data = Instansi::find($id_instansi);
@@ -61,11 +61,11 @@ class InstansiController extends Controller
         $data->nama = $request->nama;
         $data->alamat = $request->alamat;
         $data->update();
-        return redirect('/instansi')-> with('success','Data Berhasil Diubah');
+        return redirect('/instansi-adm')-> with('success','Data Berhasil Diubah');
     }
     public function destroy($id_instansi){
         $data = Instansi::find($id_instansi);
         $data->delete();
-        return redirect('/instansi')-> with('success','Data Berhasil Dihapus');
+        return redirect('/instansi-adm')-> with('success','Data Berhasil Dihapus');
     }
 }
