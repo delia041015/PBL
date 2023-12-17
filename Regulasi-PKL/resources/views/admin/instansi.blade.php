@@ -2,7 +2,16 @@
 
 @section('content')
 
-
+ <!--pengkondisian validasi frim-->
+ @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
 <div class="breadcrumb-wrapper">
 	<h1>DATA INSTANSI</h1>
 
@@ -97,6 +106,16 @@
       
 
 			<div class="modal-body">
+         <!--pengkondisian validasi frim-->
+    @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
 				<form action="/instansi-adm" method="POST">
                     @csrf
                     <div class="form-group">
