@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Sleek Dashboard - Free Bootstrap 4 Admin Dashboard Template and UI Kit. It is very powerful bootstrap admin dashboard, which allows you to build products like admin panels, content management systems and CRMs etc.">
-  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
     <title>Regulasi Praktik Kerja Lapangan</title>
     
 
@@ -107,9 +108,16 @@
 
                   <ul class="collapse " id="dashboard" data-parent="#sidebar-menu">
                     <div class="sub-menu">
+
+
                       <li class="">
-                        <a class="sidenav-item-link" href="{{ route('data-mahasiswa') }}">
-                          <span class="nav-text">Mahasiswa</span>
+                        <a class="sidenav-item-link" href="{{route('data-user')}}">
+                          <span class="nav-text">User</span>
+                        </a>
+                      </li>
+                      <li class="">
+                        <a class="sidenav-item-link" href="/kelompok-adm">
+                          <span class="nav-text">Kelompok</span>
                         </a>
                       </li>
                     </div>
@@ -125,29 +133,26 @@
 
                   <ul class="collapse " id="app" data-parent="#sidebar-menu">
                     <div class="sub-menu">
-                      <li class="">
-                        <a class="sidenav-item-link" href="{{route('data-user')}}">
-                          <span class="nav-text">User</span>
-                        </a>
-                      </li>
 
                       <li class="">
-                        <a class="sidenav-item-link" href="{{ route('data-dosen') }}">
+                        <a class="sidenav-item-link" href="/dosen-adm">
                           <span class="nav-text">Dosen</span>
                         </a>
                       </li>
 
                       <li class="">
-                        <a class="sidenav-item-link" href="{{ route('data-instansi') }}">
+                        <a class="sidenav-item-link" href="/instansi-adm">
                           <span class="nav-text">Instansi</span>
                         </a>
                       </li>
 
                       <li class="">
-                        <a class="sidenav-item-link" href="{{ route('data-mahasiswa') }}">
+                        <a class="sidenav-item-link" href="/mahasiswa-adm">
                           <span class="nav-text">Mahasiswa</span>
                         </a>
                       </li>
+                      
+
                     </div>
                   </ul>
                 </li>
@@ -156,7 +161,7 @@
                   UI Elements
                 </li> -->
 
-                <li class="has-sub ">
+                {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"
                     aria-expanded="false" aria-controls="charts">
                     <i class="mdi mdi-chart-pie"></i>
@@ -172,7 +177,7 @@
                       </li>
                     </div>
                   </ul>
-                </li>
+                </li> --}}
 
                 <!-- <li class="section-title">
                   Pages
@@ -461,5 +466,18 @@
 
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
+<script>
+    $(document).ready(function () {
+    $('#tabel-dosen').DataTable(),
+    $('#tabel-mhs').DataTable(),
+    $('#tabel-user').DataTable(),
+    $('#tabel-kelompok').DataTable(),
+    $('#tabel-instansi').DataTable(); 
+    });
+</script>
 </html>
 

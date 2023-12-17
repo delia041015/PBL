@@ -11,4 +11,9 @@ class Mahasiswa extends Model
     protected $table = 'mahasiswa';
     protected $primaryKey = 'id_mhs';
     protected $fillable = ['id_mhs','id_user','nim', 'nama', 'kelas','tempat_pkl'];
+
+    public function kelompok()
+    {
+        return $this->hasMany(Kelompok::class);
+    }
 }

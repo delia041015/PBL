@@ -11,4 +11,8 @@ class Dosen extends Model
     protected $table = 'dosen';
     protected $primaryKey = 'id_dosen';
     protected $fillable = ['id_dosen','id_user','nip', 'nama', 'alamat','no_hp'];
+
+    public function kelompok(){
+        return $this->hasMany(Kelompok::class);
+    }
 }

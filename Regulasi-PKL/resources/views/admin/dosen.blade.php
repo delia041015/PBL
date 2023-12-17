@@ -38,7 +38,7 @@
     <div class="card-body">
                 {{-- kjhg --}}
 				<div class="hoverable-data-table">
-					<table id="basic-data-table" class="table nowrap" style="width:100%">
+					<table id="tabel-dosen" class="table nowrap" style="width:100%">
 						<thead>
 							<tr>
                 <th style="width:1%">No.</th>

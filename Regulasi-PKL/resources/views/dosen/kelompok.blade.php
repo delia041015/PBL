@@ -1,4 +1,4 @@
-@extends('layouts.sidebar_mahasiswa')
+@extends('layouts.sidebar_dosen')
 
 @section('content')
 
@@ -38,7 +38,7 @@
     <div class="card-body">
                 {{-- kjhg --}}
 				<div class="hoverable-data-table">
-					<table id="tabel-kelompok" class="table nowrap" style="width:100%">
+					<table id="basic-data-table" class="table nowrap" style="width:100%">
 						<thead>
 							<tr>
                                 <th style="width:1%">No.</th>
@@ -49,7 +49,7 @@
                                 <th style="width:5%">Anggota 2</th>
                                 <th style="width:5%">Instansi</th>
                                 <th style="width:5%">Dosen</th>
-                                <th style="width:5%">Aksi</th>
+                                {{-- <th style="width:5%">Aksi</th> --}}
 							</tr>
 						</thead>
 
@@ -59,19 +59,18 @@
                                 <td> {{ $loop->iteration }}</td>
                                 {{-- <td> {{ $data->id_kelompok }}</td> --}}
                                 <td> {{ $data->nama_kelompok }}</td>
-                                {{-- <td> {{ $data->mahasiswa->nama }}</td> --}}
-                                <td>{{ $data->ketua->nama }}</td>
+                                <td> {{ $data->mahasiswa->nama }}</td>
                                 <td> {{ $data->anggota1 }}</td>
                                 <td> {{ $data->anggota2 }}</td>
                                 <td> {{ $data->instansi }}</td>
                                 <td> {{ $data->dosen }}</td>
-                                <td>
+                                {{-- <td>
                                     <form action="{{ route('delete-kelompok', $data->id_kelompok) }}" method="post">@csrf
                                         
                                         <a href="{{ route('edit-kelompok', $data->id_kelompok) }}" class="btn btn-warning">Edit</a>
                                         <button class = "btn btn-danger">Delete</button>
                                     </form>                                    
-                                </td>
+                                </td> --}}
                             </tr>
                             @endforeach
 						</tbody>
@@ -109,7 +108,12 @@
 
                     <div class="form-group">
                         <label for="ketua">Ketua <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="ketua" id="ketua">
+                        <select class="form-control" name="kategori" id="kategori">
+                            <option value="">Pilih</option>
+                            @foreach ($categories as $item)
+                                <option value="{{ $item->id_kelompok }}">{{ $item->nama }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="anggota1">Angoota 1 <span class="text-danger">*</span></label>
