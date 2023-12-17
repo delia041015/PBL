@@ -47,8 +47,7 @@
                                 <th style="width:5%">NIM</th>
                                 <th style="width:5%">Nama Mahasiswa</th>
                                 <th style="width:5%">Kelas</th>
-                                <th style="width:5%">Tempat PKL</th>
-                                <th style="width:5%">Id Dosen</th>
+                                <th style="width:5%">No HP</th>
                                 {{-- <th style="width:5%">Aksi</th> --}}
 							</tr>
 						</thead>
@@ -62,8 +61,7 @@
                                 <td> {{ $data->nim }}</td>
                                 <td> {{ $data->nama }}</td>
                                 <td> {{ $data->kelas }}</td>
-                                <td> {{ $data->tempat_pkl }}</td>
-                                <td> {{ $data->id_dosen }}</td>
+                                <td> {{ $data->no_hp }}</td>
                                 {{-- <td>
                                     <form action="{{ route('delete-mahasiswa', $data->id_mhs) }}" method="post">@csrf
                                         
@@ -124,15 +122,8 @@
                     </div>
 
                     <div class="form-group"> <!-- Perbaiki bagian ini -->
-                        <label for="tempat_pkl">Tempat PKL <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="tempat_pkl" id="tempat_pkl">
-                    </div>
-
-
-
-                    <div class="form-group">
-                        <label for="nim">Id_Dosen <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="id_dosen" id="id_dosen">
+                        <label for="no_hp">No HP <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="no_hp" id="no_hp">
                     </div>
 
 
