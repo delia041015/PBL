@@ -97,7 +97,7 @@
       
 
 			<div class="modal-body">
-				<form action="/instansi" method="POST">
+				<form action="/instansi-adm" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="id_instansi">Id_Instansi <span class="text-danger">*</span></label>
