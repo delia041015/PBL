@@ -57,6 +57,21 @@ class MahasiswaController extends Controller
         return view('mahasiswa.edit', compact('data'));
     }
     public function update(Request $request, $id_mhs){
+        $message= [
+            'required' => ':attribute tidak boleh kosong',
+            'unique' => ':attribute sudah digunakan',
+            'numeric' => ':attribute harus berupa angka',
+        ];
+
+        $this->validate($request, [
+            'id_mhs' => 'required|unique:mahasiswa',
+            'id_user' => 'required',
+            'nim' => 'required',
+            'nama' => 'required|unique:mahasiswa',
+            'kelas' => 'required',
+            'tempat_pkl' => 'required',
+            'id_dosen'=>'required'
+        ], $message);
         $data = Mahasiswa::find($id_mhs);
         // $data->id_mhs = $request->id_mhs;
         $data->id_user = $request->id_user;
