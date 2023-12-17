@@ -37,6 +37,7 @@
 	{{-- @include('admin.create_mhs') --}}
     <div class="card-body">
                 {{-- kjhg --}}
+      @include ('layouts.flash-message')
 				<div class="hoverable-data-table">
 					<table id="basic-data-table" class="table nowrap" style="width:100%">
 						<thead>

@@ -11,4 +11,8 @@ class Instansi extends Model
     protected $table = 'instansi';
     protected $primaryKey = 'id_instansi';
     protected $fillable = ['id_instansi', 'nama', 'alamat'];
+
+    public function kelompok(){
+        return $this->hasMany(Kelompok::class);
+    }
 }

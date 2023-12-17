@@ -38,7 +38,7 @@
 	@include('admin.create_user')
 			<div class="card-body">
 				<div class="hoverable-data-table">
-					<table id="basic-data-table" class="table nowrap" style="width:100%">
+					<table id="tabel-user" class="table nowrap" style="width:100%">
 						<thead>
 							<tr>
 								<th>NO</th>

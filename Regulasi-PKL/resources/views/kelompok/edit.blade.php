@@ -10,6 +10,7 @@
 <div class="row">
     <div class="col-md-6">
         <h4>Edit Data kelompok</h4>
+        {{-- @dd( $data->anggota2 ) --}}
         <br>
         <form action="{{ route('update-kelompok', $data->id_kelompok) }}" method="POST">
             @csrf
@@ -25,33 +26,53 @@
             </div>
             <div class="form-group">
                 <label for="ketua">Ketua<span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="ketua" id="ketua"
-                value="{{$data->ketua}}">
+                <select class="form-control" name="ketua" id="ketua">
+                    <option value="{{ $data->ketua_id }}">{{ $data->ketua->nama }}</option>
+                    @foreach ($categories as $item)
+                        <option value="{{ $item->id_mhs }}">{{ $item->nama }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label for="anggota1">Anggota 1<span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="anggota1" id="anggota1"
-                value="{{$data->anggota1}}">
+                <select class="form-control" name="anggota1" id="anggota1">
+                    <option value="{{ $data->anggota1_id }}">{{ $data->anggota1->nama }}</option>
+                    @foreach ($categories as $item)
+                        <option value="{{ $item->id_mhs }}">{{ $item->nama }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label for="anggota2">Anggota 2<span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="anggota2" id="anggota2"
-                value="{{$data->anggota2}}">
+                <select class="form-control" name="anggota2" id="anggota2">
+                    <option value="{{ $data->anggota2_id }}">{{ $data->anggota2->nama }}</option>
+                    @foreach ($categories as $item)
+                        <option value="{{ $item->id_mhs }}">{{ $item->nama }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label for="instansi">Instansi<span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="instansi" id="instansi"
-                value="{{$data->instansi}}">
+                <select class="form-control" name="instansi" id="instansi">
+                    <option value="{{ $data->instansi_id }}">{{ $data->instansi->nama }}</option>
+                    @foreach ($ins as $item)
+                        <option value="{{ $item->id_instansi }}">{{ $item->nama }}</option>
+                    @endforeach
+                </select>
             </div>
             <div class="form-group">
                 <label for="dosen">Dosen<span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="dosen" id="dosen"
-                value="{{$data->dosen}}">
+                <select class="form-control" name="dosen" id="dosen">
+                    <option value="{{ $data->dosen_id }}">{{ $data->dosen->nama }}</option>
+                    @foreach ($dosen as $item)
+                        <option value="{{ $item->id_dosen }}">{{ $item->nama }}</option>
+                    @endforeach
+                </select>
             </div>
             <br>
             <div>
                 <button type="submit" class="btn btn-primary">Ubah</button>
-                <a href="{{url('kelompok-mhs')}}" class="btn btn-success">Kembali</a>
+                <a href="{{url('kelompok-adm')}}" class="btn btn-success">Kembali</a>
             </div>
         </form>
     </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Mahasiswa;
+use App\Models\Kelompok;
 
 class AdminController extends Controller
 {
@@ -19,6 +20,8 @@ class AdminController extends Controller
         $data = Mahasiswa::paginate(5);
         return view('admin.mahasiswa',['datamhs'=> $data]);
     }
+
+
 
     public function store(Request $request){
         $data = new Mahasiswa();

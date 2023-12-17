@@ -38,7 +38,7 @@
     <div class="card-body">
                 {{-- kjhg --}}
 				<div class="hoverable-data-table">
-					<table id="basic-data-table" class="table nowrap" style="width:100%">
+					<table id="tabel-instansi" class="table nowrap" style="width:100%">
 						<thead>
 							<tr>
                                 <th style="width:1%">No.</th>
@@ -84,6 +84,17 @@
 					<span aria-hidden="true">&times;</span>
 				</button>
 			</div>
+
+      @if ($errors->any())
+      <div class="alert alert-danger">
+          <ul>
+              @foreach ($errors->all() as $error)
+              <li>{{$error}}</li>
+              @endforeach
+          </ul>
+      </div>
+      @endif
+      
 
 			<div class="modal-body">
 				<form action="/instansi" method="POST">

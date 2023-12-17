@@ -44,32 +44,33 @@ Route::middleware(['auth'])->group(function () {
         Route::get('logout-admin', [AuthController::class, 'destroyAdmin'])->name('logout-admin');
 
         // Mahasiswa
-        Route::get('mahasiswa', [MahasiswaController::class, 'Mahasiswa'])->name('data-mahasiswa');
-        Route::post('mahasiswa', [MahasiswaController::class, 'store'])->name('mahasiswa');
+        Route::get('/mahasiswa-adm', [MahasiswaController::class, 'Mahasiswa'])->name('data-mahasiswa');
+        Route::post('/mahasiswa-adm', [MahasiswaController::class, 'store'])->name('mahasiswa');
         Route::get('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'edit'])->name('edit-mahasiswa');
         Route::post('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'update'])->name('update-mahasiswa');
         Route::post('/mahasiswa/delete/{id_mhs}', [MahasiswaController::class,'destroy'])->name('delete-mahasiswa');
     
         // Dosen
-        // Route::get('index-dosen', [DosenController::class, 'index'])->name('index-dosen');
-        // Route::get('create-dosen', [DosenController::class, 'create'])->name('create-dosen');
-        Route::get('dosen', [DosenController::class, 'Dosen'])->name('data-dosen');
-        Route::post('dosen', [DosenController::class, 'store'])->name('dosen');
-        // Route::post('store-dosen', [DosenController::class, 'store'])->name('store-dosen');
+        Route::get('/dosen-adm', [DosenController::class, 'Dosen'])->name('data-dosen');
+        Route::post('/dosen-adm', [DosenController::class, 'store'])->name('dosen');
         Route::get('/dosen/edit/{id_dosen}', [DosenController::class,'edit'])->name('edit-dosen');
         Route::post('/dosen/edit/{id_dosen}', [DosenController::class,'update'])->name('update-dosen');
         Route::post('/dosen/delete/{id_dosen}', [DosenController::class,'destroy'])->name('delete-dosen');
     
 
         // Instansi
-        Route::get('instansi', [InstansiController::class, 'Instansi'])->name('data-instansi');
-        Route::post('instansi', [InstansiController::class, 'store'])->name('instansi');
-        // Route::get('index-instansi', [InstansiController::class, 'index'])->name('index-instansi');
-        // Route::get('create-instansi', [InstansiController::class, 'create'])->name('create-instansi');
-        // Route::post('store-instansi', [InstansiController::class, 'store'])->name('store-instansi');
+        Route::get('/instansi-adm', [InstansiController::class, 'Instansi'])->name('data-instansi');
+        Route::post('/instansi-adm', [InstansiController::class, 'store'])->name('instansi');
         Route::get('/instansi/edit/{id_instansi}', [InstansiController::class,'edit'])->name('edit-instansi');
         Route::post('/instansi/edit/{id_instansi}', [InstansiController::class,'update'])->name('update-instansi');
         Route::post('/instansi/delete/{id_instansi}', [InstansiController::class,'destroy'])->name('delete-instansi');
+
+        // Kelompok
+        Route::get('/kelompok-adm', [KelompokController::class, 'Kelompok_adm'])->name('data-kelompok-adm');
+        Route::post('/kelompok-adm', [KelompokController::class, 'store'])->name('kelompok');
+        Route::get('/kelompok/edit/{id_kelompok}', [KelompokController::class,'edit'])->name('edit-kelompok');
+        Route::post('/kelompok/edit/{id_kelompok}', [KelompokController::class,'update'])->name('update-kelompok');
+        Route::post('/kelompok/delete/{id_kelompok}', [KelompokController::class,'destroy'])->name('delete-kelompok');
     });
 
     Route::middleware(['dosen'])->group(function () {
@@ -100,10 +101,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/instansi-mhs', [MahasiswaController::class, 'Instansi'])->name('data-instansi');
 
         Route::get('/kelompok-mhs', [KelompokController::class, 'Kelompok'])->name('data-kelompok');
-        Route::post('/kelompok-mhs', [KelompokController::class, 'store'])->name('kelompok');
-        Route::get('/kelompok/edit/{id_kelompok}', [KelompokController::class,'edit'])->name('edit-kelompok');
-        Route::post('/kelompok/edit/{id_kelompok}', [KelompokController::class,'update'])->name('update-kelompok');
-        Route::post('/kelompok/delete/{id_kelompok}', [KelompokController::class,'destroy'])->name('delete-kelompok');
+        // Route::post('/kelompok-mhs', [KelompokController::class, 'store'])->name('kelompok');
+        // Route::get('/kelompok/edit/{id_kelompok}', [KelompokController::class,'edit'])->name('edit-kelompok');
+        // Route::post('/kelompok/edit/{id_kelompok}', [KelompokController::class,'update'])->name('update-kelompok');
+        // Route::post('/kelompok/delete/{id_kelompok}', [KelompokController::class,'destroy'])->name('delete-kelompok');
 
         Route::get('/edit/profile/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::post('/edit/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
@@ -112,28 +113,7 @@ Route::middleware(['auth'])->group(function () {
     
 });
 
-// Route::get('index-mahasiswa', [MahasiswaController::class, 'index'])->name('index-mahasiswa');
-// Route::get('create-mahasiswa', [MahasiswaController::class, 'create'])->name('create-mahasiswa');
-// Route::post('store-mahasiswa', [MahasiswaController::class, 'store'])->name('store-mahasiswa');
-// Route::get('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'edit'])->name('edit-mahasiswa');
-// Route::post('/mahasiswa/edit/{id_mhs}', [MahasiswaController::class,'update'])->name('update-mahasiswa');
-// Route::post('/mahasiswa/delete/{id_mhs}', [MahasiswaController::class,'destroy'])->name('delete-mahasiswa');
 
-// //Dosen
-// Route::get('index-dosen', [DosenController::class, 'index'])->name('index-dosen');
-// Route::get('create-dosen', [DosenController::class, 'create'])->name('create-dosen');
-// Route::post('store-dosen', [DosenController::class, 'store'])->name('store-dosen');
-// Route::get('/dosen/edit/{id_dosen}', [DosenController::class,'edit'])->name('edit-dosen');
-// Route::post('/dosen/edit/{id_dosen}', [DosenController::class,'update'])->name('update-dosen');
-// Route::post('/dosen/delete/{id_dosen}', [DosenController::class,'destroy'])->name('delete-dosen');
-
-// //Instansi
-// Route::get('index-instansi', [InstansiController::class, 'index'])->name('index-instansi');
-// Route::get('create-instansi', [InstansiController::class, 'create'])->name('create-instansi');
-// Route::post('store-instansi', [InstansiController::class, 'store'])->name('store-instansi');
-// Route::get('/instansi/edit/{id_instansi}', [InstansiController::class,'edit'])->name('edit-instansi');
-// Route::post('/instansi/edit/{id_instansi}', [InstansiController::class,'update'])->name('update-instansi');
-// Route::post('/instansi/delete/{id_instansi}', [InstansiController::class,'destroy'])->name('delete-instansi');
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('signUp', [AuthController::class, 'signUp'])-> name('signUp');
