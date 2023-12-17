@@ -41,8 +41,24 @@
     <![endif]-->
     <script src="assets/plugins/nprogress/nprogress.js"></script>
   </head>
-
+  
   <body class="header-fixed sidebar-fixed sidebar-dark header-light" id="body">
+    <!-- search -->
+    <script>
+        $(documen).ready(function(){
+          $('#table-mahasiswa').DataTable();
+        });
+      </script>
+    <!--pengkondisian validasi frim-->
+    @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
     <script>
       NProgress.configure({ showSpinner: false });
       NProgress.start();
