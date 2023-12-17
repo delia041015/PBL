@@ -34,6 +34,21 @@ class DosenController extends Controller
     //     return view('dosen.create');
     // }
     public function store(Request $request){
+        $message= [
+            'required' => ':attribute tidak boleh kosong',
+            'unique' => ':attribute sudah digunakan',
+            'numeric' => ':attribute harus berupa angka',
+        ];
+
+        $this->validate($request, [
+            'id_dosen' => 'required|unique:dosen',
+            'id_user' => 'required',
+            'nip' => 'required',
+            'nama' => 'required|unique:dosen',
+            'alamat' => 'required',
+            'no_hp' => 'required|numeric'
+        ], $message);
+
         $data = new Dosen();
         $data->id_dosen = $request->id_dosen;
         $data->id_user = $request->id_user;
@@ -42,7 +57,7 @@ class DosenController extends Controller
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
         $data->save();
-        return redirect('/dosen');
+        return redirect('/dosen')->with('success','Data berhasil disimpan!');
     }
     public function edit($id_dosen){
         $data = Dosen::find($id_dosen);
@@ -57,11 +72,11 @@ class DosenController extends Controller
         $data->alamat = $request->alamat;
         $data->no_hp = $request->no_hp;
         $data->update();
-        return redirect('/dosen');
+        return redirect('/dosen')->with('success','Data berhasil diubah!');
     }
     public function destroy($id_dosen){
         $data = Dosen::find($id_dosen);
         $data->delete();
-        return redirect('/dosen');
+        return redirect('/dosen')->with('success','Data berhasil dihapus!');
     }
 }

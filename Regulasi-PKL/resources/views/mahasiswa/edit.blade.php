@@ -11,6 +11,16 @@
         <div class="col-md-6">
             <h4>Edit Data Mahasiswa</h4>
             <br>
+            <!--pengkondisian validasi form-->
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
             {{-- <form action="{{ route('update-mahasiswa') }}" method="POST"> --}}
             <form action="{{ route('update-mahasiswa', ['id_mhs' => $data->id_mhs]) }}" method="POST">
                 @csrf

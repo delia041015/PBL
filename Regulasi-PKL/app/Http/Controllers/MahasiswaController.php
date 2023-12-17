@@ -25,6 +25,22 @@ class MahasiswaController extends Controller
     //     return view('mahasiswa.create');
     // }
     public function store(Request $request){
+        $message= [
+            'required' => ':attribute tidak boleh kosong',
+            'unique' => ':attribute sudah digunakan',
+            'numeric' => ':attribute harus berupa angka',
+        ];
+
+        $this->validate($request, [
+            'id_mhs' => 'required|unique:mahasiswa',
+            'id_user' => 'required',
+            'nim' => 'required',
+            'nama' => 'required|unique:mahasiswa',
+            'kelas' => 'required',
+            'tempat_pkl' => 'required',
+            'id_dosen'=>'required'
+        ], $message);
+
         $data = new Mahasiswa();
         $data->id_mhs = $request->id_mhs;
         $data->id_user = $request->id_user;
@@ -34,7 +50,7 @@ class MahasiswaController extends Controller
         $data->tempat_pkl = $request->tempat_pkl;
         $data->id_dosen = $request->id_dosen;
         $data->save();
-        return redirect('/mahasiswa');
+        return redirect('/mahasiswa')->with('sucses','Data berhasil disimpan!');
     }
     public function edit($id_mhs){
         $data = Mahasiswa::find($id_mhs);
@@ -50,12 +66,12 @@ class MahasiswaController extends Controller
         $data->tempat_pkl= $request->tempat_pkl;
         $data->id_dosen = $request->id_dosen;
         $data->update();
-        return redirect('/mahasiswa');
+        return redirect('/mahasiswa')->with('sucses','Data berhasil disimpan!');
     }
     public function destroy($id_mhs){
         $data = Mahasiswa::find($id_mhs);
         $data->delete();
-        return redirect('/mahasiswa');
+        return redirect('/mahasiswa')->with('sucses','Data berhasil disimpan!');
     }
 
 }
