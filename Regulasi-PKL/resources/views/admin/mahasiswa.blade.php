@@ -84,7 +84,6 @@
 
 
 </div>
-
 <div class="modal fade" id="exampleModalTambah" tabindex="-1" role="dialog" aria-labelledby="exampleModalFormTitle" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -96,6 +95,7 @@
 			</div>
 
 			<div class="modal-body">
+                @include('layouts.flash-message')
 				<form action="/mahasiswa" method="POST">
                     @csrf
                     <div class="form-group">
