@@ -1,7 +1,17 @@
 @extends('layouts.sidebar')
 
 @section('content')
-
+ 
+<!--Pengkondisian validasi form-->
+@if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+            <li> {{$error}} </li>
+            @endforeach
+          /ul>
+        </div>
+      @endif
 
 <div class="breadcrumb-wrapper">
 	<h1>DATA DOSEN</h1>
@@ -92,6 +102,18 @@
 			</div>
 
 			<div class="modal-body">
+
+      <!--Pengkondisian validasi form-->
+      @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+            <li> {{$error}} </li>
+            @endforeach
+          /ul>
+        </div>
+      @endif
+      
 				<form action="/dosen" method="POST">
                     @csrf
                     <div class="form-group">
