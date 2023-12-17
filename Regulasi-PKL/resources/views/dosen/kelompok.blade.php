@@ -27,18 +27,19 @@
 		<div class="card card-default">
 			<div class="card-header card-header-border-bottom d-flex justify-content-between">
             <h2>{{ strtoupper(Route::currentRouteName()) }}</h2>
+            
 
 
-
-				<button type="button"  class="btn btn-outline-primary btn-sm text-uppercase" data-toggle="modal" data-target="#exampleModalTambah">
+				{{-- <button type="button"  class="btn btn-outline-primary btn-sm text-uppercase" data-toggle="modal" data-target="#exampleModalTambah">
 					CREATE KELOMPOK
-				</button>
+				</button> --}}
 			</div>
 	{{-- @include('admin.create_mhs') --}}
     <div class="card-body">
                 {{-- kjhg --}}
 				<div class="hoverable-data-table">
-					<table id="basic-data-table" class="table nowrap" style="width:100%">
+                    
+					<table id="tabel-kelompok" class="table nowrap" style="width:100%">
 						<thead>
 							<tr>
                                 <th style="width:1%">No.</th>
@@ -59,11 +60,11 @@
                                 <td> {{ $loop->iteration }}</td>
                                 {{-- <td> {{ $data->id_kelompok }}</td> --}}
                                 <td> {{ $data->nama_kelompok }}</td>
-                                <td> {{ $data->mahasiswa->nama }}</td>
-                                <td> {{ $data->anggota1 }}</td>
-                                <td> {{ $data->anggota2 }}</td>
-                                <td> {{ $data->instansi }}</td>
-                                <td> {{ $data->dosen }}</td>
+                                <td>{{ $data->ketua ? $data->ketua->nama : 'No Mhs' }}</td>
+                                <td>{{ $data->anggota1 ? $data->anggota1->nama : 'No Mhs' }}</td>
+                                <td>{{ $data->anggota2 ? $data->anggota2->nama : 'No Mhs' }}</td>
+                                <td>{{ $data->instansi ? $data->instansi->nama : 'No Instansi' }}</td>
+                                <td>{{ $data->dosen ? $data->dosen->nama : 'No dosen' }}</td>
                                 {{-- <td>
                                     <form action="{{ route('delete-kelompok', $data->id_kelompok) }}" method="post">@csrf
                                         
@@ -94,7 +95,7 @@
 			</div>
 
 			<div class="modal-body">
-				<form action="/kelompok-mhs" method="POST">
+				<form action="/kelompok-adm" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="id_kelompok">Id_kelompok <span class="text-danger">*</span></label>
@@ -108,28 +109,48 @@
 
                     <div class="form-group">
                         <label for="ketua">Ketua <span class="text-danger">*</span></label>
-                        <select class="form-control" name="kategori" id="kategori">
+                        <select class="form-control" name="ketua" id="ketua">
                             <option value="">Pilih</option>
                             @foreach ($categories as $item)
-                                <option value="{{ $item->id_kelompok }}">{{ $item->nama }}</option>
+                                <option value="{{ $item->id_mhs }}">{{ $item->nama }}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="anggota1">Angoota 1 <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="anggota1" id="anggota1">
+                        <select class="form-control" name="anggota1" id="anggota1">
+                            <option value="">Pilih</option>
+                            @foreach ($categories as $item)
+                                <option value="{{ $item->id_mhs }}">{{ $item->nama }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="anggota2">Anggota 2 <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="anggota2" id="anggota2">
+                        <select class="form-control" name="anggota2" id="anggota2">
+                            <option value="">Pilih</option>
+                            @foreach ($categories as $item)
+                                <option value="{{ $item->id_mhs }}">{{ $item->nama }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="instansi">Instansi <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="instansi" id="instansi">
+                        <select class="form-control" name="instansi" id="instansi">
+                            <option value="">Pilih</option>
+                            @foreach ($ins as $item)
+                                <option value="{{ $item->id_instansi }}">{{ $item->nama }}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="dosen">Dosen <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="dosen" id="dosen">
+                        <select class="form-control" name="dosen" id="dosen">
+                            <option value="">Pilih</option>
+                            @foreach ($dosen as $item)
+                                <option value="{{ $item->id_dosen }}">{{ $item->nama }}</option>
+                            @endforeach
+                        </select>
                     </div>
 
 			<div class="modal-footer">

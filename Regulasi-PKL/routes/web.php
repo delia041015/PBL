@@ -85,6 +85,8 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/mahasiswa-dosen', [DosenController::class, 'Mahasiswa'])->name('data-mahasiswa');
 
         Route::get('/instansi-dosen', [DosenController::class, 'Instansi'])->name('data-instansi');
+
+        Route::get('/kelompok-dosen', [KelompokController::class, 'Kelompok_dosen'])->name('data-kelompok-adm');
     });
 
     Route::middleware(['mahasiswa'])->group(function () {
@@ -101,7 +103,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/instansi-mhs', [MahasiswaController::class, 'Instansi'])->name('data-instansi');
 
         Route::get('/kelompok-mhs', [KelompokController::class, 'Kelompok'])->name('data-kelompok');
-        // Route::post('/kelompok-mhs', [KelompokController::class, 'store'])->name('kelompok');
+        Route::post('/kelompok-mhs', [KelompokController::class, 'store2'])->name('kelompok');
         // Route::get('/kelompok/edit/{id_kelompok}', [KelompokController::class,'edit'])->name('edit-kelompok');
         // Route::post('/kelompok/edit/{id_kelompok}', [KelompokController::class,'update'])->name('update-kelompok');
         // Route::post('/kelompok/delete/{id_kelompok}', [KelompokController::class,'destroy'])->name('delete-kelompok');

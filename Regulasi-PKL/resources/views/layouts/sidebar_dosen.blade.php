@@ -137,6 +137,11 @@
                           <span class="nav-text">Instansi</span>
                         </a>
                       </li>
+                      <li class="">
+                        <a class="sidenav-item-link" href="/kelompok-dosen">
+                          <span class="nav-text">Kelompok</span>
+                        </a>
+                      </li>
                     </div>
                   </ul>
                 </li>

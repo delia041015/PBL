@@ -50,7 +50,7 @@ class MahasiswaController extends Controller
         $data->tempat_pkl = $request->tempat_pkl;
         $data->id_dosen = $request->id_dosen;
         $data->save();
-        return redirect('/mahasiswa')->with('sucses','Data berhasil disimpan!');
+        return redirect('/mahasiswa-adm')->with('sucses','Data berhasil disimpan!');
     }
     public function edit($id_mhs){
         $data = Mahasiswa::find($id_mhs);
@@ -66,12 +66,12 @@ class MahasiswaController extends Controller
         $data->tempat_pkl= $request->tempat_pkl;
         $data->id_dosen = $request->id_dosen;
         $data->update();
-        return redirect('/mahasiswa')->with('sucses','Data berhasil disimpan!');
+        return redirect('/mahasiswa-adm')->with('sucses','Data berhasil disimpan!');
     }
     public function destroy($id_mhs){
         $data = Mahasiswa::find($id_mhs);
         $data->delete();
-        return redirect('/mahasiswa')->with('sucses','Data berhasil disimpan!');
+        return redirect('/mahasiswa-adm')->with('sucses','Data berhasil disimpan!');
     }
 
 }
