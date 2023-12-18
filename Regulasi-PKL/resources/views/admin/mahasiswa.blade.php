@@ -51,7 +51,6 @@
 							<tr>
                                 <th style="width:1%">No.</th>
                                 {{-- <th style="width:5%">Id Mahasiswa</th> --}}
-                                {{-- <th style="width:5%">Id User</th> --}}
                                 <th style="width:5%">NIM</th>
                                 <th style="width:5%">Nama Mahasiswa</th>
                                 <th style="width:5%">Kelas</th>
@@ -65,7 +64,6 @@
                             <tr>
                                 <td> {{ $loop->iteration }}</td>
                                 {{-- <td> {{ $data->id_mhs }}</td> --}}
-                                {{-- <td> {{ $data->id_user }}</td> --}}
                                 <td> {{ $data->nim }}</td>
                                 <td> {{ $data->nama }}</td>
                                 <td> {{ $data->kelas }}</td>
@@ -128,10 +126,6 @@
                         <input class="form-control" type="text" name="nama" id="nama">
                     </div>
 
-                    <div class="form-group"> <!-- Perbaiki bagian ini -->
-                        <label for="id_user">Id_User<span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="id_user" id="id_user">
-                    </div>
 
                     <div class="form-group"> <!-- Perbaiki bagian ini -->
                         <label for="kelas">Kelas <span class="text-danger">*</span></label>
