@@ -101,9 +101,6 @@
 			</div>
 
 			<div class="modal-body">
-<<<<<<< HEAD
-                @include('layouts.flash-message')
-=======
      <!--pengkondisian validasi frim-->
     @if ($errors->any())
             <div class="alert alert-danger">
@@ -114,7 +111,6 @@
                 </ul>
             </div>
             @endif
->>>>>>> 2e9dfc05fca8b8d5b756c9f1879245303d6c8b6c
 				<form action="/mahasiswa-adm" method="POST">
                     @csrf
                     <div class="form-group">

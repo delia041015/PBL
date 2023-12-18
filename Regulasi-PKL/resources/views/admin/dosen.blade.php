@@ -110,11 +110,11 @@
             @foreach ($errors->all() as $error)
             <li> {{$error}} </li>
             @endforeach
-          /ul>
+          
         </div>
       @endif
       
-				<form action="/dosen" method="POST">
+				<form action="/dosen-adm" method="POST">
                     @csrf
                     <div class="form-group">
                       <label for="id_dosen">Id_Dosen <span class="text-danger">*</span></label>

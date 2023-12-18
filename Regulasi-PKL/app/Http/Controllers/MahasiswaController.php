@@ -65,7 +65,7 @@ class MahasiswaController extends Controller
             'id_mhs' => 'required|numeric',
             'id_user' => 'required|numeric',
             'nim' => 'required',
-            'nama' => 'required|unique:mahasiswa',
+            'nama' => 'required',
             'kelas' => 'required',
             'no_hp' => 'required|numeric'
         ], $message);

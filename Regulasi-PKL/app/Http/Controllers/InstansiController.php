@@ -51,8 +51,8 @@ class InstansiController extends Controller
         ];
 
         $this->validate($request, [
-            'id_instansi' => 'required|numeric|unique:instansi',
-            'nama' => 'required|unique:instansi',
+            'id_instansi' => 'required|numeric',
+            'nama' => 'required',
             'alamat' => 'required'
         ], $message);
         
