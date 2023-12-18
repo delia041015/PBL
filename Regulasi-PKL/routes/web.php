@@ -38,10 +38,10 @@ Route::middleware(['auth'])->group(function () {
         })->name('dashboard');
 
         
+        // Data User
+        Route::get('/data-user', [AdminController::class, 'dataUser'])->name('data-user');
+        Route::post('/data-user', [AdminController::class, 'store'])->name('user');
 
-        Route::get('data-user', [AdminController::class, 'dataUser'])->name('data-user');
-
-        Route::get('data-user', [AdminController::class, 'dataUser'])->name('data-user');
         Route::get('logout-admin', [AuthController::class, 'destroyAdmin'])->name('logout-admin');
 
         // Mahasiswa

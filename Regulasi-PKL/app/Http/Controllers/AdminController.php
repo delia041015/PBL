@@ -24,14 +24,11 @@ class AdminController extends Controller
 
 
     public function store(Request $request){
-        $data = new Mahasiswa();
-        $data->id_mhs = $request->id_mhs;
-        $data->id_user = $request->id_user;
-        $data->nim = $request->nim;
-        $data->nama = $request->nama;
-        $data->kelas = $request->kelas;
-        $data->tempat_pkl = $request->tempat_pkl;
-        $data->id_dosen = $request->id_dosen;
+        $data = new User();
+        $data->name = $request->name;
+        $data->email = $request->email;
+        $data->password = $request->password;
+        $data->role = $request->role;
         $data->save();
         return redirect('/dashboard');
     }
