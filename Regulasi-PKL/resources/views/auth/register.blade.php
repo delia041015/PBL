@@ -53,6 +53,20 @@
                       @enderror
                   </div>
                   <div class="col-md-12 col-12">
+
+                  <div class="form-group col-md-12 col-12">
+                    {{-- <input type="text" class="form-control input-lg" id="role" placeholder="Role" name="role"> --}}
+                    <select class="custom-select col-md-12 col-12" id="role" name="role" placeholder="Role">
+                      <option selected>Choose...</option>
+                      {{-- <option value="admin">Admin</option> --}}
+                      <option value="dosen">Dosen</option>
+                      <option value="mahasiswa">Mahasiswa</option>
+                    </select>
+                    @error('role')
+                        <p class="text-danger text-xs mt-2">{{ $message }}</p>
+                      @enderror
+                  </div>
+                  <div class="col-md-12 col-12">
                    
 
                     <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Sign Up</button>
