@@ -86,13 +86,13 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('logout-dosen', [AuthController::class, 'destroyDosen'])->name('logout-dosen');
 
-        Route::get('/dosen-dosen', [DosenController::class, 'Dosen2'])->name('data-dosen');
+        Route::get('/dosen-dsn', [DosenController::class, 'Dosen2'])->name('data-dosen');
 
         Route::get('/mahasiswa-dosen', [DosenController::class, 'Mahasiswa'])->name('data-mahasiswa');
 
         Route::get('/instansi-dosen', [DosenController::class, 'Instansi'])->name('data-instansi');
 
-        Route::get('/kelompok-dosen', [KelompokController::class, 'Kelompok_dosen'])->name('data-kelompok-adm');
+        Route::get('/kelompok-dosen', [KelompokController::class, 'Kelompok_dosen'])->name('data-kelompok');
     });
 
     Route::middleware(['mahasiswa'])->group(function () {
