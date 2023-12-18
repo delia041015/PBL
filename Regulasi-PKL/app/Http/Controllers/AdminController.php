@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function dataUser()
     {
-        $data = User::paginate(5);
+        $data = User::paginate(10);
         return view('admin.data_user', ['dataUser' => $data]);
     }
 
