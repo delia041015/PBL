@@ -33,7 +33,7 @@ class MahasiswaController extends Controller
 
         $this->validate($request, [
             'id_mhs' => 'required|unique:mahasiswa|numeric',
-            'id_user' => 'required|numeric',
+            // 'id_user' => 'required|numeric',
             'nim' => 'required',
             'nama' => 'required|unique:mahasiswa',
             'kelas' => 'required',
@@ -42,7 +42,6 @@ class MahasiswaController extends Controller
 
         $data = new Mahasiswa();
         $data->id_mhs = $request->id_mhs;
-        $data->id_user = $request->id_user;
         $data->nim = $request->nim;
         $data->nama = $request->nama;
         $data->kelas = $request->kelas;
@@ -63,7 +62,7 @@ class MahasiswaController extends Controller
 
         $this->validate($request, [
             'id_mhs' => 'required|numeric',
-            'id_user' => 'required|numeric',
+            // 'id_user' => 'required|numeric',
             'nim' => 'required',
             'nama' => 'required',
             'kelas' => 'required',
@@ -71,7 +70,7 @@ class MahasiswaController extends Controller
         ], $message);
         $data = Mahasiswa::find($id_mhs);
         // $data->id_mhs = $request->id_mhs;
-        $data->id_user = $request->id_user;
+        // $data->id_user = $request->id_user;
         $data->nim = $request->nim;
         $data->nama = $request->nama;
         $data->kelas = $request->kelas;

@@ -75,6 +75,32 @@ public function download($id)
     // Sajikan file menggunakan response()->file()
     return response()->file($full_path, ['Content-Disposition' => 'inline; filename="'.$file_name.'"']);
 }
+// public function downloads($id)
+// {
+//     $surat = Surat::find($id);
+
+//     if (!$surat) {
+//         abort(404, 'Surat not found');
+//     }
+
+//     // Dapatkan path file dari database
+//     $file_path = $surat->nama_surat;
+
+//     // Pastikan file benar-benar ada di storage
+//     $file_path = str_replace('public/', '', $file_path); // Remove 'public/' from the path
+//     $full_path = storage_path("app/public/{$file_path}");
+
+//     if (!file_exists($full_path)) {
+
+//         abort(404, 'File not found');
+//     }
+
+//     // Dapatkan nama file untuk memberikan nama pada file yang diunduh
+//     $file_name = pathinfo($full_path, PATHINFO_BASENAME);
+
+//     // Sajikan file menggunakan response()->file()
+//     return response()->file($full_path, ['Content-Disposition' => 'inline; filename="'.$file_name.'"']);
+// }
 
 
 public function validasi(Request $request, $id)

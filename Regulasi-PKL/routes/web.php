@@ -75,8 +75,8 @@ Route::middleware(['auth'])->group(function () {
     
         // Surat
         Route::get('/surat-adm', [SuratController::class, 'index_adm'])->name('data-surat');
-        Route::post('/surat/validasi/{id}', 'SuratController@validasi')->name('surat-validasi');
-        Route::get('surat/{id}/download', [SuratController::class, 'download'])->name('surat.download');
+        Route::post('/surat/validasi/{id}', [SuratController::class,'validasi'])->name('surat-validasi');
+        Route::get('/surat/{id}', [SuratController::class, 'download'])->name('surat-download');
     });
 
     Route::middleware(['dosen'])->group(function () {
@@ -111,8 +111,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/kelompok-mhs', [KelompokController::class, 'Kelompok'])->name('data-kelompok');
         Route::post('/kelompok-mhs', [KelompokController::class, 'store2'])->name('kelompok');
 
-        Route::get('/edit/profile/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
-        Route::post('/edit/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
+        Route::get('/dosen-dosen', [DosenController::class, 'Dosen2'])->name('data-dosen');
     
         // Surat
         Route::get('/surat-mhs', [SuratController::class, 'index'])->name('data-surat');

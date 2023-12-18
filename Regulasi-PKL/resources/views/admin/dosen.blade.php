@@ -1,7 +1,7 @@
 @extends('layouts.sidebar')
 
 @section('content')
- 
+
 <!--Pengkondisian validasi form-->
 @if ($errors->any())
         <div class="alert alert-danger">

@@ -93,7 +93,7 @@
 						<label for="exampleInputPassword1">Password</label>
 						<input type="password" class="form-control" id="password" name="password" placeholder="Password">
 					</div>
-                  
+					
 						Sebagai
 						<select class="custom-select my-1 mr-sm-2" id="role" name="role">
 							<option selected>Choose...</option>
