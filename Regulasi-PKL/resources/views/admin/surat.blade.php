@@ -1,4 +1,4 @@
-@extends('layouts.sidebar_mahasiswa')
+@extends('layouts.sidebar')
 
 @section('content')
 
@@ -10,7 +10,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb p-0">
             <li class="breadcrumb-item">
-              <a href="/surat-mhs">
+              <a href="/surat-adm">
                 <span class="mdi mdi-home"></span>
               </a>
             </li>
@@ -30,47 +30,48 @@
             
 
 
-				<button type="button"  class="btn btn-outline-primary btn-sm text-uppercase" data-toggle="modal" data-target="#exampleModalTambah">
+				{{-- <button type="button"  class="btn btn-outline-primary btn-sm text-uppercase" data-toggle="modal" data-target="#exampleModalTambah">
 					AJUKAN SURAT
-				</button>
+				</button> --}}
 			</div>
 	{{-- @include('admin.create_mhs') --}}
-    <div class="card-body">
-                {{-- kjhg --}}
-				<div class="hoverable-data-table">
-                    
-					<table id="tabel-kelompok" class="table nowrap" style="width:100%">
-						<thead>
-							<tr>
-                                <th style="width:1%">No.</th>
-                                <th style="width:1%">Id</th>
-                                <th style="width:5%">Nama</th>
-                                <th style="width:5%">Status</th>
-                                <th style="width:5%">Aksi</th>
-							</tr>
-						</thead>
+        <div class="card-body">
+          <div class="hoverable-data-table">
+              <table id="tabel-kelompok" class="table nowrap" style="width:100%">
+                  <thead>
+                      <tr>
+                          <th style="width:1%">No.</th>
+                          <th style="width:1%">Id</th>
+                          <th style="width:5%">Nama</th>
+                          <th style="width:5%">Status</th>
+                          <th style="width:5%">Aksi</th>
+                      </tr>
+                  </thead>
 
-						<tbody>
-                            @foreach ($dataSurat as $data)
-                            <tr>
-                                <td> {{ $loop->iteration }}</td>
-                                <td> {{ $data->id_surat }}</td>
-                                <td> {{ $data->nama_surat }}</td>
-                                <td>{{ $data->status }}</td>
-                                <td>
-                                    @if ($data->status === 'diterima')
-                                        <a href="{{ route('surat.download', ['id' => $data->id_surat]) }}" class="btn btn-success">Download</a>
-                                    @else
-                                        <h5>-</h5>
-                                    @endif
-                                </td>
-                                
-                            </tr>
-                            @endforeach
-						</tbody>
-					</table>
-				</div>
-			</div>
+                  <tbody>
+                      @foreach ($dataSurat as $data)
+                      <tr>
+                          <td>{{ $loop->iteration }}</td>
+                          <td>{{ $data->id_surat }}</td>
+                          <td>{{ $data->nama_surat }}</td>
+                          <td>{{ $data->status }}</td>
+                          <td>
+                              @if ($data->status === 'diajukan')
+                                  <form action="{{ route('surat-validasi', ['id' => $data->id_surat]) }}" method="POST">
+                                      @csrf
+                                      <button type="submit" class="btn btn-primary">Validasi</button>
+                                  </form>
+                              @else
+                                  <h5>-</h5>
+                              {{-- <a href="{{ route('surat.download', ['id' => $data->id_surat]) }}" class="btn btn-success">Download</a> --}}
+                              @endif
+                          </td>
+                      </tr>
+                      @endforeach
+                  </tbody>
+              </table>
+          </div>
+      </div>
 		</div>
 	</div>
 

@@ -140,23 +140,23 @@
                   </ul>
                 </li>
 
-                {{-- <li class="has-sub ">
+                <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#forms"
                     aria-expanded="false" aria-controls="forms">
                     <i class="mdi mdi-email-mark-as-unread"></i>
-                    <span class="nav-text">Forms</span> <b class="caret"></b>
+                    <span class="nav-text">Surat</span> <b class="caret"></b>
                   </a>
 
                   <ul class="collapse " id="forms" data-parent="#sidebar-menu">
                     <div class="sub-menu">
                       <li class="">
-                        <a class="sidenav-item-link" href="basic-input.html">
-                          <span class="nav-text">Basic Input</span>
+                        <a class="sidenav-item-link" href="/surat-mhs">
+                          <span class="nav-text">Pengajuan</span>
                         </a>
                       </li>
                     </div>
                   </ul>
-                </li> --}}
+                </li>
 
                 {{-- <li class="has-sub ">
                   <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#maps"
