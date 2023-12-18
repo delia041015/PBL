@@ -43,10 +43,21 @@
                         <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
                         <input class="form-control" type="text" name="password" id="password" value="{{$data->password}}">
                     </div>
-                    <div class="mb-3">
+                    <div>
+                        Role
+                        <select class="custom-select my-1 mr-sm-2" id="role" name="role">
+                            <option value="admin" {{ $data->role == 'admin' ? 'selected' : '' }}>Admin</option>
+                            <option value="dosen" {{ $data->role == 'dosen' ? 'selected' : '' }}>Dosen</option>
+                            <option value="mahasiswa" {{ $data->role == 'mahasiswa' ? 'selected' : '' }}>Mahasiswa</option>
+                        </select>
+                    </div>
+
+                    </div>
+						
+                    <!-- <div class="mb-3">
                         <label for="role" class="form-label">Role <span class="text-danger">*</span></label>
                         <input class="form-control" type="text" name="role" id="role" value="{{$data->role}}">
-                    </div>
+                    </div> -->
                     <br>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Ubah</button>
