@@ -45,12 +45,14 @@
       NProgress.start();
     </script>
     <div class="container">
+
         @if ($message = Session::get('success'))
         <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <strong>{{ $message }}</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
         </div>
         @endif
+
         @if ($errors->any())
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
             Periksa ulang kesalahan pengisian form 
@@ -87,7 +89,7 @@
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand">
-              <a href="/sidebar_mahasiswa" title="Sleek Dashboard">
+              <a href="" title="Sleek Dashboard">
                 <svg
                   class="brand-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -811,12 +813,12 @@
                           {{Auth::user()->name}} <small class="pt-1">{{Auth::user()->email}}</small>
                         </div>
                       </li>
-
+{{-- 
                       <li>
                         <a href="{{ route('profile.edit', auth()->user()->id) }}">
                             <i class="mdi mdi-account"></i> My Profile 
                         </a>
-                      </li>
+                      </li> --}}
                       {{-- <li class="right-sidebar-in">
                         <a href="javascript:0"> <i class="mdi mdi-settings"></i> Setting </a>
                       </li> --}}

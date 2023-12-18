@@ -418,11 +418,11 @@
                         </div>
                       </li>
 
-                      <li>
+                      {{-- <li>
                         <a href="">
                           <i class="mdi mdi-account"></i> My Profile
                         </a>
-                      </li>
+                      </li> --}}
 
                       <li class="dropdown-footer">
                         <a href="{{route('logout-admin')}}"> <i class="mdi mdi-logout"></i> Log Out </a>

@@ -10,7 +10,7 @@ class Dosen extends Model
     use HasFactory;
     protected $table = 'dosen';
     protected $primaryKey = 'id_dosen';
-    protected $fillable = ['id_dosen','id_user','nip', 'nama', 'alamat','no_hp'];
+    protected $fillable = ['id_dosen','nip', 'nama', 'alamat','no_hp'];
 
     public function kelompok(){
         return $this->hasMany(Kelompok::class);

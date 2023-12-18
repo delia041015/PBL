@@ -37,12 +37,12 @@
 	{{-- @include('admin.create_mhs') --}}
         <div class="card-body">
           <div class="hoverable-data-table">
-              <table id="tabel-kelompok" class="table nowrap" style="width:100%">
+              <table id="tabel-surat" class="table nowrap" style="width:100%">
                   <thead>
                       <tr>
                           <th style="width:1%">No.</th>
                           <th style="width:1%">Id</th>
-                          <th style="width:5%">Nama</th>
+                          <th style="width:5%">File</th>
                           <th style="width:5%">Status</th>
                           <th style="width:5%">Aksi</th>
                       </tr>
@@ -62,8 +62,9 @@
                                       <button type="submit" class="btn btn-primary">Validasi</button>
                                   </form>
                               @else
-                                  <h5>-</h5>
-                              {{-- <a href="{{ route('surat.download', ['id' => $data->id_surat]) }}" class="btn btn-success">Download</a> --}}
+                                  {{-- <h5>-</h5> --}}
+                                  {{-- <a href="{{ url('/download/'.$data->id_surat) }}" class="btn btn-success">Download</a> --}}
+                                  <a href="{{ route('surat-download', ['id' => $data->id_surat]) }}" class="btn btn-success">Download</a>
                               @endif
                           </td>
                       </tr>

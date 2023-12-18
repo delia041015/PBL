@@ -41,17 +41,15 @@ class DosenController extends Controller
         ];
 
         $this->validate($request, [
-            'id_dosen' => 'required|unique:dosen',
-            'id_user' => 'required',
-            'nip' => 'required',
-            'nama' => 'required|unique:dosen',
+            'id_dosen' => 'required|unique:dosen|numeric',
+            'nip' => 'required|unique:dosen|numeric',
+            'nama' => 'required',
             'alamat' => 'required',
             'no_hp' => 'required|numeric'
         ], $message);
 
         $data = new Dosen();
         $data->id_dosen = $request->id_dosen;
-        $data->id_user = $request->id_user;
         $data->nip = $request->nip;
         $data->nama = $request->nama;
         $data->alamat = $request->alamat;
@@ -73,7 +71,6 @@ class DosenController extends Controller
 
         $this->validate($request, [
             'id_dosen' => 'required',
-            'id_user' => 'required',
             'nip' => 'required',
             'nama' => 'required',
             'alamat' => 'required',
@@ -81,7 +78,6 @@ class DosenController extends Controller
         ], $message);
         $data = Dosen::find($id_dosen);
         $data->id_dosen = $request->id_dosen;
-        $data->id_user = $request->id_user;
         $data->nip = $request->nip;
         $data->nama = $request->nama;
         $data->alamat = $request->alamat;

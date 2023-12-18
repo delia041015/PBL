@@ -10,7 +10,7 @@ class Mahasiswa extends Model
     use HasFactory;
     protected $table = 'mahasiswa';
     protected $primaryKey = 'id_mhs';
-    protected $fillable = ['id_mhs','id_user','nim', 'nama', 'kelas','tempat_pkl'];
+    protected $fillable = ['id_mhs','nim', 'nama', 'kelas','no_hp'];
 
     public function kelompok()
     {

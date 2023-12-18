@@ -35,10 +35,6 @@
                         <input class="form-control" type="text" name="id_mhs" id="id_mhs disabled" value="{{$data->id_mhs}}">
                     </div>
                     <div class="mb-3">
-                        <label for="id_user" class="form-label">Id_User <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="id_user" id="id_user" value="{{$data->id_user}}">
-                    </div>
-                    <div class="mb-3">
                         <label for="nim" class="form-label">NIM <span class="text-danger">*</span></label>
                         <input class="form-control" type="text" name="nim" id="nim" value="{{$data->nim}}">
                     </div>

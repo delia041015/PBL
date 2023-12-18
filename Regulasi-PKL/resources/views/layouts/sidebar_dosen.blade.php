@@ -88,7 +88,7 @@
           <div id="sidebar" class="sidebar sidebar-with-footer">
             <!-- Aplication Brand -->
             <div class="app-brand">
-              <a href="/index.html" title="Sleek Dashboard">
+              <a href="{{ route('dashboard_dosen') }}" title="Sleek Dashboard">
                 <svg
                   class="brand-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -119,8 +119,9 @@
 
                   <ul class="collapse " id="dashboard" data-parent="#sidebar-menu">
                     <div class="sub-menu">
+
                       <li class="">
-                        <a class="sidenav-item-link" href="/dosen-dosen">
+                        <a class="sidenav-item-link" href="/dosen-dsn">
                           <span class="nav-text">Dosen</span>
                         </a>
                       </li>
@@ -128,7 +129,6 @@
                       <li class="">
                         <a class="sidenav-item-link" href="/mahasiswa-dosen">
                           <span class="nav-text">Mahasiswa</span>
-                          {{-- <span class="badge badge-success">new</span> --}}
                         </a>
                       </li>
 
@@ -1181,11 +1181,11 @@
                         </div>
                       </li>
 
-                      <li>
+                      {{-- <li>
                         <a href="user-profile.html">
                           <i class="mdi mdi-account"></i> My Profile
                         </a>
-                      </li>
+                      </li> --}}
                       {{-- <li>
                         <a href="#">
                           <i class="mdi mdi-email"></i> Message

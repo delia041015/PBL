@@ -31,30 +31,30 @@
                 
                 <form action="{{ route('update-dosen', $data->id_dosen) }}" method="POST">
                     @csrf
-                    <div class="mb-3">
+                    <div class="form-group mb-3">
                         <label for="id_dosen" class="form-label">Id_Dosen <span class="text-danger">*</span></label>
                         <input class="form-control" type="text" name="id_dosen" id="id_dosen" value="{{$data->id_dosen}}">
                     </div>
-                    <div class="form-group">
-                    <label for="nip">NIP <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="nip" id="nip"
-                    value="{{$data->nip}}">
-                </div>
-                <div class="form-group">
-                    <label for="nama">Nama <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="nama" id="nama"
-                    value="{{$data->nama}}">
-                </div>
-                <div class="form-group">
-                    <label for="alamat">Alamat<span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="alamat" id="alamat"
-                    value="{{$data->alamat}}">
-                </div>
-                <div class="form-group">
-                    <label for="no_hp">No HP <span class="text-danger">*</span></label>
-                    <input class="form-control" type="text" name="no_hp" id="no_hp"
-                    value="{{$data->no_hp}}">
-                </div>
+                    <div class="form-group mb-3">
+                        <label for="nip">NIP <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="nip" id="nip"
+                        value="{{$data->nip}}">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="nama">Nama <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="nama" id="nama"
+                        value="{{$data->nama}}">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="alamat">Alamat<span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="alamat" id="alamat"
+                        value="{{$data->alamat}}">
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="no_hp">No HP <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="no_hp" id="no_hp"
+                        value="{{$data->no_hp}}">
+                    </div>
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary">Ubah</button>
                         <a href="/dosen-adm" class="btn btn-success">Kembali</a>
