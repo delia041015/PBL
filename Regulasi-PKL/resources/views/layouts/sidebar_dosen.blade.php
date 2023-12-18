@@ -1181,11 +1181,11 @@
                         </div>
                       </li>
 
-                      <li>
+                      {{-- <li>
                         <a href="user-profile.html">
                           <i class="mdi mdi-account"></i> My Profile
                         </a>
-                      </li>
+                      </li> --}}
                       {{-- <li>
                         <a href="#">
                           <i class="mdi mdi-email"></i> Message
