@@ -42,6 +42,7 @@
                     <div class="mb-3">
                         <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
                         <input class="form-control" type="text" name="password" id="password" value="{{$data->password}}">
+                        <small class="text-muted">Nilai ini telah di-hash menggunakan bcrypt.</small>
                     </div>
                     <div>
                         Role
