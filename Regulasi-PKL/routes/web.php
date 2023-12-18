@@ -8,6 +8,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\InstansiController;
 use App\Http\Controllers\KelompokController;
+use App\Http\Controllers\SuratController;
 use App\Models\Instansi;
 use App\Models\Kelompok;
 
@@ -71,6 +72,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/kelompok/edit/{id_kelompok}', [KelompokController::class,'edit'])->name('edit-kelompok');
         Route::post('/kelompok/edit/{id_kelompok}', [KelompokController::class,'update'])->name('update-kelompok');
         Route::post('/kelompok/delete/{id_kelompok}', [KelompokController::class,'destroy'])->name('delete-kelompok');
+    
+        // Surat
+        Route::get('/surat-adm', [SuratController::class, 'index_adm'])->name('data-surat');
+        Route::post('/surat/validasi/{id}', 'SuratController@validasi')->name('surat-validasi');
+        Route::get('surat/{id}/download', [SuratController::class, 'download'])->name('surat.download');
     });
 
     Route::middleware(['dosen'])->group(function () {
@@ -107,6 +113,11 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/edit/profile/{id}', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::post('/edit/profile/{id}', [ProfileController::class, 'update'])->name('profile.update');
+    
+        // Surat
+        Route::get('/surat-mhs', [SuratController::class, 'index'])->name('data-surat');
+        Route::post('/surat-mhs', [SuratController::class, 'store'])->name('surat');
+        Route::get('surat/{id}/download', [SuratController::class, 'download'])->name('surat.download');
     });
 
     
