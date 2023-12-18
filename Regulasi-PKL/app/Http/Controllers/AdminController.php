@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Mahasiswa;
-use App\Models\Kelompok;
-
 
 class AdminController extends Controller
 {
@@ -40,9 +38,11 @@ class AdminController extends Controller
         $data = new User();
         $data->id = $request->id;
         $data->name = $request->name;
+        $data->email = $request->email;
         $data->password = $request->password;
         $data->role = $request->role;
         $data->save();
+
         return redirect('/data-user')->with('success', 'Data berhasil disimpan!');
     }
 
@@ -72,6 +72,7 @@ class AdminController extends Controller
         $data->password = $request->password;
         $data->role = $request->role;
         $data->save();
+
         return redirect('/data-user')->with('success', 'Data berhasil disimpan!');
     }
 
@@ -79,6 +80,7 @@ class AdminController extends Controller
     {
         $data = User::find($id);
         $data->delete();
+
         return redirect('/data-user')->with('success', 'Data berhasil dihapus!');
     }
 }
