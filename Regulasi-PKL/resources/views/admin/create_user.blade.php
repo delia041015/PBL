@@ -10,6 +10,11 @@
 
 			<div class="modal-body">
 			<form action="/data-user" method="POST">
+			@csrf
+                    <div class="form-group">
+                        <label for="id">Id_User <span class="text-danger">*</span></label>
+                        <input class="form-control" type="text" name="id" id="id">
+                    </div>
                 <div class="form-group">
 						<label for="namer">Name</label>
 						<input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name">
