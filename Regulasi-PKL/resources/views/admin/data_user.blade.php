@@ -59,9 +59,9 @@
 							 <td>{{ $data->role }}</td>
 							 <td>{{ $data->created_at }}</td>
 							 <td>
-                                    <form action="{{ route('delete-user', $data->id_user) }}" method="post">@csrf
+                                    <form action="{{ route('delete-user', $data->id) }}" method="post">@csrf
                                         
-                                        <a href="{{ route('edit-user', $data->id_user) }}" class="btn btn-warning">Edit</a>
+                                        <a href="{{ route('edit-user', $data->id) }}" class="btn btn-warning">Edit</a>
                                         <button class = "btn btn-danger">Delete</button>
                                     </form>                                    
                                 </td>
