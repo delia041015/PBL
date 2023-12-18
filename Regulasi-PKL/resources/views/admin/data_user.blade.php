@@ -106,13 +106,9 @@
 						<label for="exampleInputPassword1">Password</label>
 						<input type="password" class="form-control" id="password" name="password" placeholder="Password">
 					</div>
-<<<<<<< HEAD
+
                   
 						Role
-=======
-					
-						Sebagai
->>>>>>> d17d5ff4bb0cea9cddcd920ea59423fd51ce8d1a
 						<select class="custom-select my-1 mr-sm-2" id="role" name="role">
 							<option selected>Choose...</option>
 							<option value="admin">Admin</option>
