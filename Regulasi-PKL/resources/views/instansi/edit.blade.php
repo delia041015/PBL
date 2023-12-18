@@ -17,6 +17,7 @@
                 <h4 class="text-center text-primary mb-4">Edit Data Instansi</h4>
                 
                 @if ($errors->any())
+                    @csrf
                     <div class="alert alert-danger">
                         <ul>
                             @foreach ($errors->all() as $error)

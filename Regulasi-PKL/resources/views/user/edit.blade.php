@@ -25,8 +25,7 @@
                         </ul>
                     </div>
                 @endif
-                
-                <form action="{{ route('update-userr', $data->id_user) }}" method="POST">
+                <form action="{{ route('update-user', $data->id) }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="id" class="form-label">id_user<span class="text-danger">*</span></label>
