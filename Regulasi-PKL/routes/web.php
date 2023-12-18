@@ -40,6 +40,11 @@ Route::middleware(['auth'])->group(function () {
         
 
         Route::get('data-user', [AdminController::class, 'dataUser'])->name('data-user');
+        Route::post('/user-adm', [AdminController::class, 'store'])->name('user');
+        Route::get('/user/edit/{id}', [AdminController::class,'edit'])->name('edit-user');
+        Route::post('/user/edit/{id}', [AdminController::class,'update'])->name('update-user');
+        Route::post('/user/delete/{id}', [AdminController::class,'destroy'])->name('delete-user');
+    
 
         Route::get('data-user', [AdminController::class, 'dataUser'])->name('data-user');
         Route::get('logout-admin', [AuthController::class, 'destroyAdmin'])->name('logout-admin');

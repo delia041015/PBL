@@ -9,7 +9,7 @@
 			</div>
 
 			<div class="modal-body">
-				<form>
+			<form action="/data-user" method="POST">
                 <div class="form-group">
 						<label for="namer">Name</label>
 						<input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Name">
@@ -36,7 +36,7 @@
 
 			<div class="modal-footer">
 				<button type="button" class="btn btn-danger btn-pill" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary btn-pill">Save Changes</button>
+				<button type="submit" class="btn btn-primary btn-pill">Save Changes</button>
 			</div>
             </form>
 		</div>

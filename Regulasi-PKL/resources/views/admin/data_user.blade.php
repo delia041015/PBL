@@ -46,6 +46,7 @@
 								<th>Email</th>
 								<th>Role</th>
 								<th>Buat akun</th>
+								<th>Aksi</th>
 							</tr>
 						</thead>
 
@@ -57,6 +58,13 @@
                        		 <td>{{ $data->email }}</td>
 							 <td>{{ $data->role }}</td>
 							 <td>{{ $data->created_at }}</td>
+							 <td>
+                                    <form action="{{ route('delete-user', $data->id_user) }}" method="post">@csrf
+                                        
+                                        <a href="{{ route('edit-user', $data->id_user) }}" class="btn btn-warning">Edit</a>
+                                        <button class = "btn btn-danger">Delete</button>
+                                    </form>                                    
+                                </td>
 							</tr>
 						@endforeach
 						</tbody>
