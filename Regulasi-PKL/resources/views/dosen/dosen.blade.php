@@ -100,11 +100,6 @@
                   </div>
   
                   <div class="form-group">
-                      <label for="id_user">Id_User <span class="text-danger">*</span></label>
-                      <input class="form-control" type="text" name="id_user" id="id_user">
-                  </div>
-  
-                  <div class="form-group">
                       <label for="nip">NIP <span class="text-danger">*</span></label>
                       <input class="form-control" type="text" name="nip" id="nip">
                   </div>

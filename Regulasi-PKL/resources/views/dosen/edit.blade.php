@@ -35,10 +35,6 @@
                         <label for="id_dosen" class="form-label">Id_Dosen <span class="text-danger">*</span></label>
                         <input class="form-control" type="text" name="id_dosen" id="id_dosen" value="{{$data->id_dosen}}">
                     </div>
-                    <div class="mb-3">
-                        <label for="id_user" class="form-label">Id_User <span class="text-danger">*</span></label>
-                        <input class="form-control" type="text" name="id_user" id="id_user" value="{{$data->id_user}}">
-                    </div>
                     <div class="form-group">
                     <label for="nip">NIP <span class="text-danger">*</span></label>
                     <input class="form-control" type="text" name="nip" id="nip"
