@@ -919,8 +919,12 @@
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function(){
-    $('#tabel-mahasiswa').DataTable(),
-    $('#tabel-kelompok').DataTable();
+    $('#tabel-mahasiswa').DataTable({paging: true,  pageLength: 5});
+    $('#tabel-kelompok').DataTable({paging: true,  pageLength: 5});
+    $('#tabel-instansi').DataTable({paging: true,  pageLength: 5});
+    $('#tabel-surat').DataTable({paging: true,  pageLength: 5});
+    $('#tabel-mahasiswa').DataTable({paging: true,  pageLength: 5}),
+    $('#tabel-kelompok').DataTable({paging: true,  pageLength: 5});
     });
 </script>
 </html>

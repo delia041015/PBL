@@ -10,13 +10,13 @@ class AdminController extends Controller
 {
     public function dataUser()
     {
-        $data = User::paginate(10);
+        $data = User::paginate(100);
         return view('admin.data_user', ['dataUser' => $data]);
     }
 
     public function mahasiswa()
     {
-        $data = Mahasiswa::paginate(10);
+        $data = Mahasiswa::paginate(100);
         return view('admin.mahasiswa', ['datamhs' => $data]);
     }
 

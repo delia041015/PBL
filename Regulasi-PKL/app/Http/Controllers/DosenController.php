@@ -14,20 +14,20 @@ class DosenController extends Controller
     //         return view('dosen.index', ['dataDosen'=> $data]);
     // }
     public function Dosen(){
-        $data = Dosen::paginate(10);
+        $data = Dosen::paginate(100);
         return view('admin.dosen',['dataDosen'=> $data]);
     }
     public function Mahasiswa(){
-        $data = Mahasiswa::paginate(10);
+        $data = Mahasiswa::paginate(100);
         return view('dosen.mahasiswa',['datamhs'=> $data]);
     }
     public function Dosen2(){
-        $data = Dosen::paginate(10);
+        $data = Dosen::paginate(100);
         return view('dosen.dosen',['dataDosen'=> $data]);
     }
 
     public function Instansi(){
-        $data = Instansi::paginate(10);
+        $data = Instansi::paginate(100);
         return view('dosen.instansi',['dataInstansi'=> $data]);
     }
     // public function create(){

@@ -13,12 +13,12 @@ class SuratController extends Controller
      */
     public function index()
     {
-        $data = Surat::paginate(10);
+        $data = Surat::paginate(100);
         return view('mahasiswa.surat',['dataSurat'=> $data]);
     }
     public function index_adm()
     {
-        $data = Surat::paginate(10);
+        $data = Surat::paginate(100);
         return view('admin.surat',['dataSurat'=> $data]);
     }
 
