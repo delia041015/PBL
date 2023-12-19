@@ -87,7 +87,7 @@
 			</div>
 
 			<div class="modal-body">
-				<form action="/user-adm" method="POST">
+				<form action="/data-user" method="POST">
 				@csrf
                     <div class="form-group">
                         <label for="id">Id_User <span class="text-danger">*</span></label>

@@ -344,16 +344,16 @@
               </button>
               <!-- search form -->
               <div class="search-form d-none d-lg-inline-block">
-                <div class="input-group">
+                {{-- <div class="input-group">
                   <button type="button" name="search" id="search-btn" class="btn btn-flat">
                     <i class="mdi mdi-magnify"></i>
                   </button>
                   <input type="text" name="query" id="search-input" class="form-control" placeholder="'button', 'chart' etc."
                     autofocus autocomplete="off" />
-                </div>
-                <div id="search-results-container">
+                </div> --}}
+                {{-- <div id="search-results-container">
                   <ul id="search-results"></ul>
-                </div>
+                </div> --}}
               </div>
 
               <div class="navbar-right ">
@@ -919,7 +919,8 @@
 <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
 <script>
     $(document).ready(function(){
-    $('#tabel-mahasiswa').DataTable();
+    $('#tabel-mahasiswa').DataTable(),
+    $('#tabel-kelompok').DataTable();
     });
 </script>
 </html>
