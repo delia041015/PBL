@@ -1251,7 +1251,13 @@
     <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/plugins/simplebar/simplebar.min.js"></script>
  
-    
+    <script>
+  $(document).ready(function () {
+    $('#tabel-dosen').DataTable({paging: true,  pageLength: 5});
+    $('#tabel-kelompok').DataTable({paging: true,  pageLength: 5});
+    $('#tabel-instansi').DataTable({paging: true,  pageLength: 5});
+  });
+</script>
     
 
     

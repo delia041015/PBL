@@ -10,7 +10,7 @@ use App\Models\Dosen;
 class KelompokController extends Controller
 {
     public function Kelompok(){
-        $data = Kelompok::paginate(10);
+        $data = Kelompok::paginate(100);
         $categories = Mahasiswa::all();
         $ins = Instansi::all();
         $dosen = Dosen::all();
@@ -18,14 +18,14 @@ class KelompokController extends Controller
     }
 
     public function Kelompok_adm(){
-        $data = Kelompok::paginate(10);
+        $data = Kelompok::paginate(100);
         $categories = Mahasiswa::all();
         $ins = Instansi::all();
         $dosen = Dosen::all();
         return view('admin.kelompok',['dataKelompok'=> $data],compact('categories','ins','dosen'));
     }
     public function Kelompok_dosen(){
-        $data = Kelompok::paginate(10);
+        $data = Kelompok::paginate(100);
         $categories = Mahasiswa::all();
         $ins = Instansi::all();
         $dosen = Dosen::all();

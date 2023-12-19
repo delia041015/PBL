@@ -39,7 +39,7 @@
                 {{-- kjhg --}}
 				<div class="hoverable-data-table">
                     
-					<table id="tabel-kelompok" class="table nowrap" style="width:100%">
+					<table id="tabel-surat" class="table nowrap" style="width:100%">
 						<thead>
 							<tr>
                                 <th style="width:1%">No.</th>
