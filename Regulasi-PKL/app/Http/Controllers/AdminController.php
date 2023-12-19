@@ -16,7 +16,7 @@ class AdminController extends Controller
 
     public function mahasiswa()
     {
-        $data = Mahasiswa::paginate(5);
+        $data = Mahasiswa::paginate(10);
         return view('admin.mahasiswa', ['datamhs' => $data]);
     }
 

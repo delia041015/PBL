@@ -12,7 +12,7 @@ class InstansiController extends Controller
     //         return view('instansi.index', ['dataInstansi'=> $data]);
     // }
     public function Instansi(){
-        $data = Instansi::paginate(5);
+        $data = Instansi::paginate(10);
         return view('admin.instansi',['dataInstansi'=> $data]);
     }
 

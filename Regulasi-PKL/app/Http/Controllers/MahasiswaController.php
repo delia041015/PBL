@@ -14,11 +14,11 @@ class MahasiswaController extends Controller
     // }
 
     public function Mahasiswa(){
-        $data = Mahasiswa::paginate(5);
+        $data = Mahasiswa::paginate(10);
         return view('admin.mahasiswa',['datamhs'=> $data]);
     }
     public function Instansi(){
-        $data = Instansi::paginate(5);
+        $data = Instansi::paginate(10);
         return view('mahasiswa.instansi',['dataInstansi'=> $data]);
     }
     // public function create(){
