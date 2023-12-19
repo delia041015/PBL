@@ -22,7 +22,7 @@ class SuratController extends Controller
         return view('admin.surat',['dataSurat'=> $data]);
     }
 
-    public function store(Request $request)
+   public function store(Request $request)
 {
     $message= [
         'required' => ':attribute tidak boleh kosong',
@@ -35,8 +35,14 @@ class SuratController extends Controller
         'nama_surat' => 'required|file|mimes:pdf,doc,docx'
     ], $message);
 
+    // Dapatkan nama asli berkas yang diunggah oleh pengguna
+    $originalFileName = $request->file('nama_surat')->getClientOriginalName();
+ 
+    // Simpan file ke storage dengan nama berkas yang sesuai
+    $file_path = $request->file('nama_surat')->storeAs('public/surat', $originalFileName);
+
     // Simpan file ke storage
-    $file_path = $request->file('nama_surat')->store('public/surat');
+    // $file_path = $request->file('nama_surat')->store('public/surat');
 
 
     $data = new Surat();

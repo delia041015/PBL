@@ -35,6 +35,15 @@
 				</button>
 			</div>
 	{{-- @include('admin.create_mhs') --}}
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <div class="card-body">
                 {{-- kjhg --}}
 				<div class="hoverable-data-table">
@@ -44,7 +53,7 @@
 							<tr>
                                 <th style="width:1%">No.</th>
                                 <th style="width:1%">Id</th>
-                                <th style="width:5%">Nama</th>
+                                <th style="width:5%">File</th>
                                 <th style="width:5%">Status</th>
                                 <th style="width:5%">Aksi</th>
 							</tr>
@@ -55,7 +64,7 @@
                             <tr>
                                 <td> {{ $loop->iteration }}</td>
                                 <td> {{ $data->id_surat }}</td>
-                                <td> {{ $data->nama_surat }}</td>
+                                <<td>{{ basename($data->nama_surat) }}</td>
                                 <td>{{ $data->status }}</td>
                                 <td>
                                     @if ($data->status === 'diterima')
@@ -108,7 +117,6 @@
 		</div>
 	</div>
 </div>
-
 
 
 @endsection
