@@ -51,14 +51,14 @@
 						</thead>
 
 						<tbody>
-						@foreach($dataUser as $key => $data)
+						@foreach($dataUser as $data)
 							<tr>
-							 <td>{{ $dataUser->firstItem() + $key }}</td>
-                       		 <td>{{ $data->name }}</td>
-                       		 <td>{{ $data->email }}</td>
-							 <td>{{ $data->role }}</td>
-							 <td>{{ $data->created_at }}</td>
-							 <td>
+								<td> {{ $loop->iteration }}</td>
+								<td>{{ $data->name }}</td>
+								<td>{{ $data->email }}</td>
+								<td>{{ $data->role }}</td>
+								<td>{{ $data->created_at }}</td>
+								<td>
                                     <form action="{{ route('delete-user', $data->id) }}" method="post">@csrf
                                         
                                         <a href="{{ route('edit-user', $data->id) }}" class="btn btn-warning">Edit</a>
@@ -87,7 +87,7 @@
 			</div>
 
 			<div class="modal-body">
-				<form action="/data-user" method="POST">
+				<form action="/user-adm" method="POST">
 				@csrf
                     <div class="form-group">
                         <label for="id">Id_User <span class="text-danger">*</span></label>
